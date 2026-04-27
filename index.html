@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Управление digital-проектами и командой разработки</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0f;
+      --bg2: #0f0f1a;
+      --card: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.08);
+      --accent1: #7c3aed;
+      --accent2: #ec4899;
+      --accent3: #06b6d4;
+      --accent4: #f59e0b;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --grad: linear-gradient(135deg, #7c3aed, #ec4899);
+      --grad2: linear-gradient(135deg, #06b6d4, #7c3aed);
+      --grad3: linear-gradient(135deg, #f59e0b, #ec4899);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 200px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── PROGRESS BAR ── */
+    #progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      width: 0%;
+      background: var(--grad);
+      z-index: 1000;
+      transition: width 0.1s linear;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(10,10,15,0.8);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.25rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+      border-color: var(--accent1);
+      background: rgba(124,58,237,0.15);
+    }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 2rem 4rem;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.25;
+      pointer-events: none;
+    }
+    .hero-glow-1 { width: 600px; height: 600px; background: #7c3aed; top: -100px; left: -100px; }
+    .hero-glow-2 { width: 500px; height: 500px; background: #ec4899; bottom: -50px; right: -50px; }
+    .hero-glow-3 { width: 300px; height: 300px; background: #06b6d4; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      border: 1px solid rgba(124,58,237,0.4);
+      background: rgba(124,58,237,0.1);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #a78bfa;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-label::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #a78bfa;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 6vw, 5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+    }
+
+    h1 .highlight {
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 560px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-speaker {
+      margin-top: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .speaker-avatar {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: var(--grad);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .speaker-info { text-align: left; }
+    .speaker-name { font-weight: 700; font-size: 1rem; }
+    .speaker-role { font-size: 0.8rem; color: var(--muted); }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      z-index: 1;
+      animation: fadeInUp 1s ease 1s both;
+    }
+
+    .scroll-arrow {
+      width: 24px; height: 24px;
+      border-right: 2px solid var(--muted);
+      border-bottom: 2px solid var(--muted);
+      transform: rotate(45deg);
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: rotate(45deg) translateY(0); }
+      50% { transform: rotate(45deg) translateY(6px); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+      to { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      position: relative;
+      padding: 7rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-num {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-num span {
+      font-size: 0.65rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    .tag-purple { background: rgba(124,58,237,0.2); color: #a78bfa; }
+    .tag-pink   { background: rgba(236,72,153,0.2); color: #f472b6; }
+    .tag-cyan   { background: rgba(6,182,212,0.2);  color: #22d3ee; }
+    .tag-amber  { background: rgba(245,158,11,0.2); color: #fbbf24; }
+    .tag-green  { background: rgba(34,197,94,0.2);  color: #4ade80; }
+
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .section-lead {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin-bottom: 3rem;
+    }
+
+    /* ── CARDS ── */
+    .cards {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .cards-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .cards-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .cards-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem;
+      transition: transform 0.25s, border-color 0.25s, background 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(124,58,237,0.35);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .card-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .icon-purple { background: rgba(124,58,237,0.2); }
+    .icon-pink   { background: rgba(236,72,153,0.2); }
+    .icon-cyan   { background: rgba(6,182,212,0.2); }
+    .icon-amber  { background: rgba(245,158,11,0.2); }
+    .icon-green  { background: rgba(34,197,94,0.2); }
+
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ── BIG NUMBER STAT ── */
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .stat {
+      flex: 1;
+      min-width: 140px;
+      padding: 1.25rem 1.5rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .stat-num {
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-label { font-size: 0.78rem; color: var(--muted); margin-top: 0.25rem; }
+
+    /* ── TIMELINE ── */
+    .timeline { display: flex; flex-direction: column; gap: 0; }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 80px 1px 1fr;
+      gap: 0 1.5rem;
+      padding-bottom: 2.5rem;
+    }
+
+    .timeline-item:last-child { padding-bottom: 0; }
+
+    .timeline-step {
+      text-align: right;
+      padding-top: 0.15rem;
+    }
+
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      font-size: 0.8rem;
+      font-weight: 800;
+      margin-left: auto;
+    }
+
+    .badge-purple { background: rgba(124,58,237,0.25); color: #a78bfa; border: 1px solid rgba(124,58,237,0.4); }
+    .badge-pink   { background: rgba(236,72,153,0.25); color: #f472b6; border: 1px solid rgba(236,72,153,0.4); }
+    .badge-cyan   { background: rgba(6,182,212,0.25);  color: #22d3ee; border: 1px solid rgba(6,182,212,0.4); }
+    .badge-amber  { background: rgba(245,158,11,0.25); color: #fbbf24; border: 1px solid rgba(245,158,11,0.4); }
+
+    .timeline-line {
+      width: 1px;
+      background: var(--border);
+      position: relative;
+    }
+
+    .timeline-line::before {
+      content: '';
+      position: absolute;
+      top: 8px; left: -4px;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent1);
+    }
+
+    .timeline-content { padding-top: 0.1rem; }
+
+    .timeline-content h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-content p {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    /* ── TOOL PILLS ── */
+    .tools-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 2rem;
+    }
+
+    .tool-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      font-size: 0.82rem;
+      font-weight: 500;
+      transition: all 0.2s;
+      cursor: default;
+    }
+
+    .tool-pill:hover {
+      border-color: var(--accent1);
+      background: rgba(124,58,237,0.1);
+      color: #a78bfa;
+    }
+
+    .tool-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+    }
+
+    /* ── PROJECT SHOWCASE ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+
+    .project-card {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--card);
+      transition: transform 0.25s, border-color 0.25s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(124,58,237,0.4);
+    }
+
+    .project-header {
+      padding: 1.5rem 1.75rem 1rem;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .project-emoji { font-size: 2rem; }
+
+    .project-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+    }
+
+    .project-body { padding: 0 1.75rem 1.75rem; }
+
+    .project-body h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-body p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .meta-item strong {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    /* ── LEADERSHIP / CTA ── */
+    #cta {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-glow-1 { width: 400px; height: 400px; background: #7c3aed; top: -100px; right: -100px; opacity: 0.2; }
+    .cta-glow-2 { width: 300px; height: 300px; background: #ec4899; bottom: -50px; left: -50px; opacity: 0.15; }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 2.5rem 0;
+    }
+
+    .principle {
+      padding: 1.5rem;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      text-align: center;
+      transition: all 0.25s;
+    }
+
+    .principle:hover {
+      border-color: rgba(236,72,153,0.4);
+      background: rgba(236,72,153,0.05);
+    }
+
+    .principle-icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .principle h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .principle p { font-size: 0.8rem; color: var(--muted); }
+
+    .cta-quote {
+      margin: 3rem 0;
+      padding: 2.5rem;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(124,58,237,0.12), rgba(236,72,153,0.08));
+      border: 1px solid rgba(124,58,237,0.25);
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-quote::before {
+      content: '"';
+      position: absolute;
+      top: 0.5rem; left: 1.5rem;
+      font-size: 6rem;
+      line-height: 1;
+      font-family: Georgia, serif;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      opacity: 0.5;
+    }
+
+    .cta-quote blockquote {
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      font-weight: 700;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-quote cite {
+      display: block;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-style: normal;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.85rem 2rem;
+      border-radius: 100px;
+      background: var(--grad);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s;
+      box-shadow: 0 0 30px rgba(124,58,237,0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 50px rgba(124,58,237,0.6);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    footer strong {
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav { padding: 0 1rem; }
+      section { padding: 5rem 1.25rem; }
+      .timeline-item { grid-template-columns: 50px 1px 1fr; }
+      .cta-quote { padding: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="progress"></div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">PM · Digital</div>
+    <ul class="nav-links">
+      <li><a href="#s1">1</a></li>
+      <li><a href="#s2">2</a></li>
+      <li><a href="#s3">3</a></li>
+      <li><a href="#s4">4</a></li>
+      <li><a href="#s5">5</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="hero-glow hero-glow-3"></div>
+
+    <div class="hero-label">Открытая лекция · Практика</div>
+
+    <h1>
+      Управление<br/>
+      <span class="highlight">digital-проектами</span><br/>
+      и командой разработки
+    </h1>
+
+    <p class="hero-sub">
+      От идеи до релиза без потерь — как выстраивать команды,
+      управлять хаосом и доводить до результата самые сложные проекты.
+    </p>
+
+    <div class="hero-speaker">
+      <div class="speaker-avatar">Е</div>
+      <div class="speaker-info">
+        <div class="speaker-name">Екатерина Елдарова</div>
+        <div class="speaker-role">Head of Digital Projects · Notamedia</div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <span>Прокрутите вниз</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- 1. ЧТО ТАКОЕ ПРОЕКТ -->
+  <section id="s1">
+    <div class="section-num">
+      <span class="tag-purple">01</span>
+      Основы
+    </div>
+    <h2 class="reveal">Что такое проект<br/>и кто его делает?</h2>
+    <p class="section-lead reveal">Проект — это не задача в Jira. Это ограниченное по времени и ресурсам усилие создать уникальный результат. И ключевое слово здесь — <strong>команда</strong>.</p>
+
+    <div class="cards cards-3 reveal">
+      <div class="card">
+        <div class="card-icon icon-purple">🎯</div>
+        <h3>Признаки проекта</h3>
+        <p>Уникальная цель. Ограниченные ресурсы. Чёткие сроки. Один ответственный. Это и отличает проект от операционной деятельности.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-pink">👥</div>
+        <h3>Архитектура команды</h3>
+        <p>PM, тимлид, разработчики, дизайнер, аналитик, QA. Каждая роль — не должность, а набор ответственностей с чёткими границами.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-cyan">⚡</div>
+        <h3>Критерии жизнеспособности</h3>
+        <p>Единый бэклог. Общее понимание цели. Психологическая безопасность. Ретроспективы. Команда, которая говорит о проблемах вслух.</p>
+      </div>
+    </div>
+
+    <div class="stats reveal" style="margin-top:2.5rem">
+      <div class="stat">
+        <div class="stat-num">70%</div>
+        <div class="stat-label">проектов проваливаются из-за проблем с командой, не технологий</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3×</div>
+        <div class="stat-label">эффективнее работают команды с shared ownership</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">5–9</div>
+        <div class="stat-label">оптимальный размер команды по Bezos Pizza Rule</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- 2. ЭТАПЫ РАЗРАБОТКИ -->
+  <section id="s2">
+    <div class="section-num">
+      <span class="tag-pink">02</span>
+      Процесс
+    </div>
+    <h2 class="reveal">Этапы разработки<br/>и работа с заказчиком</h2>
+    <p class="section-lead reveal">Каждая фаза проекта — это договорённость. Нарушили договорённость — потеряли доверие. Потеряли доверие — потеряли проект.</p>
+
+    <div class="timeline reveal">
+      <div class="timeline-item">
+        <div class="timeline-step"><div class="step-badge badge-purple">01</div></div>
+        <div class="timeline-line"></div>
+        <div class="timeline-content">
+          <h3>Discovery & Brief</h3>
+          <p>Фиксируем цели, ограничения, стейкхолдеров и критерии успеха. Артефакт — подписанный бриф. Без него не стартуем.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-step"><div class="step-badge badge-pink">02</div></div>
+        <div class="timeline-line"></div>
+        <div class="timeline-content">
+          <h3>Аналитика & ТЗ</h3>
+          <p>Декомпозиция требований, user stories, wireframes. Заказчик согласует каждый экран до старта разработки.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-step"><div class="step-badge badge-cyan">03</div></div>
+        <div class="timeline-line"></div>
+        <div class="timeline-content">
+          <h3>Дизайн & прототип</h3>
+          <p>UI-кит, компонентная библиотека, интерактивный прототип. Согласование дизайна — отдельный этап с отдельным актом.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-step"><div class="step-badge badge-amber">04</div></div>
+        <div class="timeline-line"></div>
+        <div class="timeline-content">
+          <h3>Разработка спринтами</h3>
+          <p>Двухнедельные итерации. Демо в конце каждого спринта. Заказчик видит прогресс — нет пространства для «я думал по-другому».</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-step"><div class="step-badge badge-purple">05</div></div>
+        <div class="timeline-line"></div>
+        <div class="timeline-content">
+          <h3>QA & приёмка</h3>
+          <p>Чек-лист тест-кейсов. UAT с представителем заказчика. Баги в трекере — не в мессенджерах. Подписание акта = закрытие этапа.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-step"><div class="step-badge badge-pink">06</div></div>
+        <div class="timeline-line"></div>
+        <div class="timeline-content">
+          <h3>Релиз & поддержка</h3>
+          <p>Деплой по чеклисту. Гарантийный период. Пост-мортем команды. Документация передана. Проект закрыт официально.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- 3. ИНСТРУМЕНТЫ -->
+  <section id="s3">
+    <div class="section-num">
+      <span class="tag-cyan">03</span>
+      Инструменты
+    </div>
+    <h2 class="reveal">Анатомия<br/>управляемого хаоса</h2>
+    <p class="section-lead reveal">Сложные проекты рассыпаются не от технических ошибок — от информационного вакуума. Прозрачность процессов и предсказуемость сроков — это инженерная задача.</p>
+
+    <div class="cards cards-2 reveal">
+      <div class="card">
+        <div class="card-icon icon-cyan">📋</div>
+        <h3>Единый источник правды</h3>
+        <p>Confluence + Jira + Git. Ни одно решение не живёт в Telegram. Каждое изменение требований — задача в трекере с оценкой влияния на сроки.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-purple">📊</div>
+        <h3>Дашборды для заказчика</h3>
+        <p>Еженедельный статус-репорт: выполнено / в работе / заблокировано. Заказчик видит риски до того, как они стали проблемами.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-amber">🔄</div>
+        <h3>Change Management</h3>
+        <p>Запрос на изменение = отдельный документ с оценкой: +N дней, +M денег. Никаких «быстрых правочек» без согласования.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-pink">🚨</div>
+        <h3>Управление рисками</h3>
+        <p>Реестр рисков ведётся с первого дня. Каждый риск: вероятность × влияние × план митигации. Пересматривается каждые две недели.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-green">✅</div>
+        <h3>Definition of Done</h3>
+        <p>Задача закрыта только когда: код в main, тесты зелёные, QA проверил, документация обновлена, заказчик принял. Не раньше.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-cyan">🗣️</div>
+        <h3>Governance для госзаказчиков</h3>
+        <p>Каждый контрольный этап — официальный протокол. Контрагент от заказчика имеет право голоса только в рамках согласованного ТЗ.</p>
+      </div>
+    </div>
+
+    <div class="tools-grid reveal">
+      <div class="tool-pill"><span class="tool-dot" style="background:#0052cc"></span>Jira</div>
+      <div class="tool-pill"><span class="tool-dot" style="background:#172b4d"></span>Confluence</div>
+      <div class="tool-pill"><span class="tool-dot" style="background:#4a154b"></span>Slack</div>
+      <div class="tool-pill"><span class="tool-dot" style="background:#f02e65"></span>Miro</div>
+      <div class="tool-pill"><span class="tool-dot" style="background:#1abcfe"></span>Figma</div>
+      <div class="tool-pill"><span class="tool-dot" style="background:#f05032"></span>Git</div>
+      <div class="tool-pill"><span class="tool-dot" style="background:#2496ed"></span>Docker</div>
+      <div class="tool-pill"><span class="tool-dot" style="background:#e10098"></span>GraphQL</div>
+      <div class="tool-pill"><span class="tool-dot" style="background:#47a248"></span>MongoDB</div>
+      <div class="tool-pill"><span class="tool-dot" style="background:#336791"></span>PostgreSQL</div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- 4. ПРОЕКТЫ -->
+  <section id="s4">
+    <div class="section-num">
+      <span class="tag-amber">04</span>
+      Опыт
+    </div>
+    <h2 class="reveal">Знаковые проекты</h2>
+    <p class="section-lead reveal">Каждый проект — это школа. Здесь — те, которые изменили подход к управлению навсегда.</p>
+
+    <div class="projects-grid reveal">
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-emoji">🏛️</div>
+          <span class="project-tag tag-amber">Госсектор</span>
+        </div>
+        <div class="project-body">
+          <h3>Цифровая платформа для органов власти</h3>
+          <p>Портал государственных услуг с интеграцией в федеральные реестры. Жёсткие требования ИБ, многоуровневое согласование, ФЗ-152.</p>
+          <div class="project-meta">
+            <div class="meta-item"><strong>18 мес.</strong>Длительность</div>
+            <div class="meta-item"><strong>24 чел.</strong>Команда</div>
+            <div class="meta-item"><strong>4 ведомства</strong>Стейкхолдеры</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-emoji">🛒</div>
+          <span class="project-tag tag-cyan">E-commerce</span>
+        </div>
+        <div class="project-body">
+          <h3>Маркетплейс федерального ритейлера</h3>
+          <p>Платформа с 50 000+ SKU, ML-рекомендациями, интеграцией с 1С и WMS. Запуск под высокую нагрузку в сезон распродаж.</p>
+          <div class="project-meta">
+            <div class="meta-item"><strong>12 мес.</strong>Длительность</div>
+            <div class="meta-item"><strong>16 чел.</strong>Команда</div>
+            <div class="meta-item"><strong>2M+</strong>Пользователей</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-emoji">🏥</div>
+          <span class="project-tag tag-green">MedTech</span>
+        </div>
+        <div class="project-body">
+          <h3>Медицинская информационная система</h3>
+          <p>МИС для сети клиник: электронные карты пациентов, телемедицина, интеграция с лабораториями. Сертификация ФСТЭК.</p>
+          <div class="project-meta">
+            <div class="meta-item"><strong>14 мес.</strong>Длительность</div>
+            <div class="meta-item"><strong>12 чел.</strong>Команда</div>
+            <div class="meta-item"><strong>40 клиник</strong>Внедрение</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-emoji">🎓</div>
+          <span class="project-tag tag-purple">EdTech</span>
+        </div>
+        <div class="project-body">
+          <h3>Образовательная платформа</h3>
+          <p>LMS с видеотрансляциями, тестированием, геймификацией и аналитикой обучения. 100 000 студентов в первый месяц.</p>
+          <div class="project-meta">
+            <div class="meta-item"><strong>8 мес.</strong>Длительность</div>
+            <div class="meta-item"><strong>10 чел.</strong>Команда</div>
+            <div class="meta-item"><strong>100K</strong>Пользователей</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- 5. ЛИДЕРСТВО -->
+  <section id="s5" id="cta">
+    <div class="hero-glow hero-glow cta-glow-1" style="position:absolute;border-radius:50%;filter:blur(120px);pointer-events:none;width:400px;height:400px;background:#7c3aed;top:-100px;right:-100px;opacity:0.15;"></div>
+    <div class="hero-glow cta-glow-2" style="position:absolute;border-radius:50%;filter:blur(120px);pointer-events:none;width:300px;height:300px;background:#ec4899;bottom:-50px;left:-50px;opacity:0.12;"></div>
+
+    <div class="section-num">
+      <span class="tag-green">05</span>
+      Лидерство
+    </div>
+    <h2 class="reveal">Не бойтесь<br/>брать ответственность</h2>
+    <p class="section-lead reveal">Технические навыки — это порог входа. Лидерство — это то, что определяет масштаб вашего влияния.</p>
+
+    <div class="principles reveal">
+      <div class="principle">
+        <div class="principle-icon">🧭</div>
+        <h3>Владейте решениями</h3>
+        <p>Хороший PM не ждёт разрешения. Он берёт ответственность, принимает решение и несёт последствия.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-icon">🛡️</div>
+        <h3>Защищайте команду</h3>
+        <p>Когда что-то идёт не так — вы стоите перед заказчиком, не прячетесь за разработчиком.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-icon">📡</div>
+        <h3>Говорите правду</h3>
+        <p>Плохие новости не улучшаются со временем. Сообщайте о рисках и проблемах сразу — это признак зрелости.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-icon">🌱</div>
+        <h3>Растите людей</h3>
+        <p>Лучший показатель PM — когда команда после проекта стала сильнее, чем в начале.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-icon">🔁</div>
+        <h3>Учитесь на ошибках</h3>
+        <p>Пост-мортем без поиска виноватых. Ретроспектива без страха. Провал — это данные, не приговор.</p>
+      </div>
+    </div>
+
+    <div class="cta-quote reveal">
+      <blockquote>
+        Управление проектом — это не контроль над людьми.<br/>
+        Это создание среды, в которой умные люди<br/>могут делать лучшую работу своей жизни.
+      </blockquote>
+      <cite>— Принцип, проверенный на 400+ проектах</cite>
+    </div>
+
+    <div class="reveal" style="text-align:center">
+      <a href="mailto:info@nota.media" class="btn-primary">
+        Задать вопрос спикеру
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      <strong>Управление digital-проектами и командой разработки</strong>
+      &nbsp;·&nbsp; Открытая лекция &nbsp;·&nbsp; <strong>Notamedia</strong>
+    </p>
+    <p style="margin-top:0.5rem;opacity:0.5">agency.nota.media</p>
+  </footer>
+
+  <script>
+    // Progress bar
+    window.addEventListener('scroll', () => {
+      const scroll = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      document.getElementById('progress').style.width = (scroll / height * 100) + '%';
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
