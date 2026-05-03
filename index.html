@@ -283,15 +283,7 @@
     }
 
     .section-num {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1.5rem;
+      display: none;
     }
 
     .section-num span {
@@ -1081,16 +1073,7 @@
       <img src="logo.png" alt="Notamedia" />
     </div>
     <div class="nav-title">Управление проектами</div>
-    <div class="nav-links-wrap">
-      <ul class="nav-links">
-        <li><a href="#company" title="О компании">N</a></li>
-        <li><a href="#s1">1</a></li>
-        <li><a href="#s2">2</a></li>
-        <li><a href="#s3">3</a></li>
-        <li><a href="#s4">4</a></li>
-        <li><a href="#s5">5</a></li>
-      </ul>
-    </div>
+    <div class="nav-links-wrap"></div>
   </nav>
 
   <!-- HERO -->
@@ -1205,34 +1188,78 @@
     <h2 class="reveal">Проект и команда в IT:<br/><span class="highlight">как это устроено на самом деле</span></h2>
     <p class="section-lead reveal">Почему проекты ломаются и при чём тут люди</p>
 
-    <div class="s1-layout reveal">
+    <!-- Two-column: ideal vs reality -->
+    <div class="s1-contrast reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem;">
 
-      <!-- LEFT COLUMN: definition -->
-      <div>
-        <div class="s1-eyebrow">ЧТО ТАКОЕ</div>
-        <h3 class="s1-headline">ПРОЕКТ</h3>
-        <div class="s1-rule"></div>
-        <p class="s1-body">
-          <strong>Проект</strong> — это временная деятельность,
-          направленная на создание уникального
-          результата для достижения
-          определённой цели.
-        </p>
-        <div class="s1-note-card">
-          <div class="s1-note-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <circle cx="12" cy="12" r="6"/>
-              <circle cx="12" cy="12" r="2"/>
-              <path d="M22 12h-4M6 12H2M12 6V2M12 22v-4"/>
-            </svg>
-          </div>
-          <p>Проект имеет <span class="s1-accent-purple">чёткие ограничения</span> (сроки, ресурсы, бюджет) и всегда связан с <span class="s1-accent-pink">неопределённостью и рисками</span>.</p>
+      <!-- LEFT: clean/ideal -->
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:2rem 2.25rem;">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">💼</div>
+        <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#94a3b8;margin-bottom:0.6rem;">Как представляют проект в IT</div>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;margin-top:1.25rem;">
+          <li style="display:flex;align-items:center;gap:0.75rem;font-size:1rem;font-weight:600;color:#f1f5f9;">
+            <span style="width:8px;height:8px;border-radius:50%;background:#a78bfa;flex-shrink:0;"></span>план
+          </li>
+          <li style="display:flex;align-items:center;gap:0.75rem;font-size:1rem;font-weight:600;color:#f1f5f9;">
+            <span style="width:8px;height:8px;border-radius:50%;background:#a78bfa;flex-shrink:0;"></span>сроки
+          </li>
+          <li style="display:flex;align-items:center;gap:0.75rem;font-size:1rem;font-weight:600;color:#f1f5f9;">
+            <span style="width:8px;height:8px;border-radius:50%;background:#a78bfa;flex-shrink:0;"></span>задачи
+          </li>
+          <li style="display:flex;align-items:center;gap:0.75rem;font-size:1rem;font-weight:600;color:#f1f5f9;">
+            <span style="width:8px;height:8px;border-radius:50%;background:#a78bfa;flex-shrink:0;"></span>контроль
+          </li>
+        </ul>
+      </div>
+
+      <!-- RIGHT: chaos -->
+      <div style="position:relative;overflow:hidden;border-radius:20px;padding:2rem 2.25rem;border:1px solid rgba(236,72,153,0.3);background:linear-gradient(135deg,rgba(124,58,237,0.12),rgba(236,72,153,0.15),rgba(245,158,11,0.08));">
+        <!-- noise texture -->
+        <div style="position:absolute;inset:0;background-image:url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n2)' opacity='0.07'/%3E%3C/svg%3E&quot;);background-size:200px;pointer-events:none;border-radius:20px;"></div>
+        <div style="position:relative;z-index:1;">
+          <div style="font-size:2.5rem;margin-bottom:1rem;">🔥</div>
+          <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#f472b6;margin-bottom:0.6rem;">Как это происходит на самом деле</div>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;margin-top:1.25rem;">
+            <li style="display:flex;align-items:center;gap:0.75rem;font-size:1rem;font-weight:600;color:#f1f5f9;">
+              <span style="width:8px;height:8px;border-radius:50%;background:#ec4899;flex-shrink:0;"></span>меняющиеся требования
+            </li>
+            <li style="display:flex;align-items:center;gap:0.75rem;font-size:1rem;font-weight:600;color:#f1f5f9;">
+              <span style="width:8px;height:8px;border-radius:50%;background:#ec4899;flex-shrink:0;"></span>конфликты
+            </li>
+            <li style="display:flex;align-items:center;gap:0.75rem;font-size:1rem;font-weight:600;color:#f1f5f9;">
+              <span style="width:8px;height:8px;border-radius:50%;background:#f59e0b;flex-shrink:0;"></span>дедлайны «вчера»
+            </li>
+            <li style="display:flex;align-items:center;gap:0.75rem;font-size:1rem;font-weight:600;color:#f1f5f9;">
+              <span style="width:8px;height:8px;border-radius:50%;background:#f59e0b;flex-shrink:0;"></span>неопределённость
+            </li>
+          </ul>
         </div>
       </div>
 
-      <!-- RIGHT COLUMN: orbit diagram -->
-      <div class="s1-right">
+    </div>
+
+    <div class="reveal" style="text-align:center;margin-top:2.5rem;">
+      <p style="font-size:clamp(1.2rem,2.5vw,1.75rem);font-weight:800;letter-spacing:-0.01em;color:#f1f5f9;">
+        Проект = движение к цели через <span style="background:linear-gradient(135deg,#7c3aed,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">неопределённость</span>
+      </p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- 1b. ЧТО ТАКОЕ ПРОЕКТ -->
+  <section id="s1b" style="padding-top:3rem;padding-bottom:3rem;">
+    <div class="section-num">
+      <span class="tag-purple">01</span>
+      Основы
+    </div>
+
+    <div class="reveal" style="text-align:center;margin-bottom:0.5rem;">
+      <h3 class="s1-headline" style="font-size:clamp(2.5rem,5vw,5rem)!important;display:inline-block;">ПРОЕКТ</h3>
+      <div class="s1-rule" style="margin:0.5rem auto 0;"></div>
+    </div>
+
+    <div class="reveal" style="display:flex;justify-content:center;overflow:visible;">
+      <div class="s1-right" style="overflow:visible;">
         <div class="s1-orbit-wrap">
 
           <!-- dashed orbit ring -->
@@ -1316,7 +1343,6 @@
             </div>
             <div class="s1-sat-label">
               <strong>ВРЕМЕННЫЙ</strong>
-              <span>имеет начало<br/>и завершение</span>
             </div>
           </div>
 
@@ -1329,9 +1355,8 @@
                 <line x1="12" y1="17" x2="12.01" y2="17"/>
               </svg>
             </div>
-            <div class="s1-sat-label">
+            <div class="s1-sat-label" style="right:calc(100% + 12px);left:auto;top:50%;transform:translateY(-50%);text-align:right;">
               <strong>НЕОПРЕДЕЛЁННЫЙ</strong>
-              <span>сопряжён с рисками<br/>и изменениями</span>
             </div>
           </div>
 
@@ -1346,7 +1371,6 @@
             </div>
             <div class="s1-sat-label">
               <strong>УНИКАЛЬНЫЙ</strong>
-              <span>создаёт уникальный<br/>продукт или результат</span>
             </div>
           </div>
 
@@ -1367,7 +1391,6 @@
             </div>
             <div class="s1-sat-label">
               <strong>ОГРАНИЧЕННЫЙ</strong>
-              <span>ограничен ресурсами,<br/>бюджетом и сроками</span>
             </div>
           </div>
 
@@ -1381,13 +1404,241 @@
             </div>
             <div class="s1-sat-label">
               <strong>ЦЕЛЕНАПРАВЛЕННЫЙ</strong>
-              <span>направлен на достижение<br/>конкретной цели<br/>или ценности</span>
             </div>
           </div>
 
         </div>
       </div>
+    </div>
+  </section>
 
+  <div class="section-divider"></div>
+
+  <!-- 2a. ЧТО ТАКОЕ КОМАНДА ПРОЕКТА -->
+  <section id="s2a" style="position:relative;overflow:hidden;background:linear-gradient(160deg,#eef4ff 0%,#f0fbf4 100%);">
+    <div style="position:absolute;width:600px;height:600px;background:#1a56a0;border-radius:50%;filter:blur(160px);opacity:0.08;top:-120px;left:-120px;pointer-events:none;"></div>
+    <div style="position:absolute;width:500px;height:500px;background:#0891b2;border-radius:50%;filter:blur(160px);opacity:0.07;bottom:-100px;right:-100px;pointer-events:none;"></div>
+
+    <div class="section-num">
+      <span style="background:rgba(8,145,178,0.15);color:#0891b2;font-size:0.65rem;padding:0.2rem 0.5rem;border-radius:4px;font-weight:700;">02</span>
+      <span style="color:#4a6080;">Команда</span>
+    </div>
+
+    <div class="reveal" style="text-align:center;margin-bottom:2.5rem;">
+      <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#0891b2;margin-bottom:0.5rem;">ЧТО ТАКОЕ</div>
+      <h2 style="font-size:clamp(2.8rem,6vw,5rem);font-weight:900;letter-spacing:-0.02em;line-height:0.95;color:#1e2d3d;margin-bottom:0;">КОМАНДА<br/><span style="font-size:clamp(1.4rem,3vw,2.2rem);color:#4a6080;font-weight:700;letter-spacing:-0.01em;">проекта</span></h2>
+      <div style="width:56px;height:3px;background:linear-gradient(90deg,#1a6fc4,#0891b2);border-radius:2px;margin:1.25rem auto 0;"></div>
+    </div>
+
+    <div class="reveal" style="max-width:820px;margin:0 auto;text-align:center;">
+      <p style="font-size:clamp(1rem,2vw,1.3rem);color:#334155;line-height:1.75;margin-bottom:2.5rem;">
+        <span style="color:#0e7490;font-weight:600;">Команда проекта</span> — это группа людей с разными ролями и компетенциями, объединённых
+        <span style="color:#5b21b6;font-weight:600;">общей целью</span> и несущих
+        <span style="color:#be185d;font-weight:600;">совместную ответственность</span> за результат.
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;">
+        <div style="background:#fff;border:1px solid rgba(8,145,178,0.18);border-radius:16px;padding:1.75rem;text-align:center;box-shadow:0 2px 16px rgba(8,145,178,0.08);">
+          <div style="font-size:2rem;margin-bottom:0.75rem;">🎯</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:0.35rem;color:#1e2d3d;">Общая цель</div>
+          <div style="font-size:0.82rem;color:#4a6080;">Все работают на один результат</div>
+        </div>
+        <div style="background:#fff;border:1px solid rgba(91,33,182,0.15);border-radius:16px;padding:1.75rem;text-align:center;box-shadow:0 2px 16px rgba(91,33,182,0.07);">
+          <div style="font-size:2rem;margin-bottom:0.75rem;">🤝</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:0.35rem;color:#1e2d3d;">Взаимозависимость</div>
+          <div style="font-size:0.82rem;color:#4a6080;">Каждый нужен другим</div>
+        </div>
+        <div style="background:#fff;border:1px solid rgba(190,24,93,0.15);border-radius:16px;padding:1.75rem;text-align:center;box-shadow:0 2px 16px rgba(190,24,93,0.07);">
+          <div style="font-size:2rem;margin-bottom:0.75rem;">⚡</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:0.35rem;color:#1e2d3d;">Ответственность</div>
+          <div style="font-size:0.82rem;color:#4a6080;">Каждый отвечает за свой вклад</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- 2b. СОСТАВ КОМАНДЫ В IT -->
+  <section id="s2b">
+    <div class="section-num">
+      <span class="tag-cyan">02</span>
+      Команда
+    </div>
+    <h2 class="reveal">Состав команды<br/><span class="highlight">в IT-проекте</span></h2>
+    <p class="section-lead reveal">Типичные роли, без которых проект не взлетит</p>
+
+    <div class="reveal" style="margin-top:2rem;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(0.75rem,1.5vw,1.5rem);">
+      <div class="card">
+        <div class="card-icon icon-purple">🧭</div>
+        <h3>Project Manager</h3>
+        <p>Отвечает за сроки, коммуникацию и управление рисками. Держит всё вместе.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-cyan">📐</div>
+        <h3>Аналитик / BA</h3>
+        <p>Формализует требования, строит мост между бизнесом и разработчиками.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-pink">🎨</div>
+        <h3>Дизайнер / UX</h3>
+        <p>Создаёт интерфейс, опыт пользователя и визуальную концепцию продукта.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-amber">⚙️</div>
+        <h3>Backend-разработчик</h3>
+        <p>Строит серверную логику, API, базы данных и интеграции.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-cyan">🖥️</div>
+        <h3>Frontend-разработчик</h3>
+        <p>Реализует интерфейс, анимации и взаимодействие с пользователем.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-green">✅</div>
+        <h3>QA-инженер</h3>
+        <p>Тестирует продукт, ищет баги и следит за качеством на всех этапах.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-purple">🛠️</div>
+        <h3>DevOps-инженер</h3>
+        <p>Обеспечивает инфраструктуру, CI/CD и стабильность развёртывания.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-pink">👤</div>
+        <h3>Заказчик / Product Owner</h3>
+        <p>Определяет приоритеты, принимает решения и является голосом бизнеса.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- 2c. КОМАНДА ≠ НАБОР ЛЮДЕЙ -->
+  <section id="s2c">
+    <div class="section-num">
+      <span class="tag-cyan">02</span>
+      Команда
+    </div>
+    <h2 class="reveal" style="text-align:center;">Команда <span class="highlight">≠</span> набор людей</h2>
+    <p class="section-lead reveal" style="text-align:center;margin-left:auto;margin-right:auto;">Разница между группой и настоящей командой — в системе взаимодействия</p>
+
+    <div class="reveal" style="display:grid;grid-template-columns:1fr auto 1fr;gap:1.5rem;align-items:start;margin-top:2rem;">
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:2rem;">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">👥</div>
+        <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#94a3b8;margin-bottom:1.25rem;">Набор людей</div>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.8rem;">
+          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.95rem;color:#94a3b8;"><span style="color:#ef4444;font-weight:700;">✕</span> Каждый работает сам по себе</li>
+          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.95rem;color:#94a3b8;"><span style="color:#ef4444;font-weight:700;">✕</span> Нет общей цели</li>
+          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.95rem;color:#94a3b8;"><span style="color:#ef4444;font-weight:700;">✕</span> Непонятно, кто за что отвечает</li>
+          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.95rem;color:#94a3b8;"><span style="color:#ef4444;font-weight:700;">✕</span> Конфликты не разрешаются</li>
+          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.95rem;color:#94a3b8;"><span style="color:#ef4444;font-weight:700;">✕</span> Информация теряется</li>
+        </ul>
+      </div>
+
+      <div style="display:flex;align-items:center;justify-content:center;padding-top:5rem;">
+        <div style="font-size:2.5rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">≠</div>
+      </div>
+
+      <div style="position:relative;overflow:hidden;border-radius:20px;padding:2rem;border:1px solid rgba(6,182,212,0.3);background:linear-gradient(135deg,rgba(6,182,212,0.08),rgba(124,58,237,0.12));">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">⚡</div>
+        <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#22d3ee;margin-bottom:1.25rem;">Команда = система взаимодействия</div>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.8rem;">
+          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.95rem;color:#f1f5f9;"><span style="color:#4ade80;font-weight:700;">✓</span> Синхронизированные цели</li>
+          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.95rem;color:#f1f5f9;"><span style="color:#4ade80;font-weight:700;">✓</span> Чёткие роли и ответственности</li>
+          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.95rem;color:#f1f5f9;"><span style="color:#4ade80;font-weight:700;">✓</span> Прозрачная коммуникация</li>
+          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.95rem;color:#f1f5f9;"><span style="color:#4ade80;font-weight:700;">✓</span> Конфликты решаются внутри</li>
+          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.95rem;color:#f1f5f9;"><span style="color:#4ade80;font-weight:700;">✓</span> Знания передаются и сохраняются</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- 2d. ЧТО ДЕЛАЕТ КОМАНДУ РАБОЧЕЙ -->
+  <section id="s2d">
+    <div class="section-num">
+      <span class="tag-cyan">02</span>
+      Команда
+    </div>
+    <h2 class="reveal">Что делает<br/><span class="highlight">команду рабочей</span></h2>
+    <p class="section-lead reveal">5 факторов, которые определяют эффективность команды</p>
+
+    <div class="cards cards-3 reveal" style="margin-top:2rem;">
+      <div class="card">
+        <div class="card-icon icon-purple">🛡️</div>
+        <h3>Психологическая безопасность</h3>
+        <p>Люди не боятся ошибиться или высказать мнение. Без страха нет честной коммуникации.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-cyan">🎯</div>
+        <h3>Ясность целей</h3>
+        <p>Каждый понимает, зачем он здесь и какой результат считается успехом.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-pink">💬</div>
+        <h3>Открытая коммуникация</h3>
+        <p>Проблемы озвучиваются сразу, не копятся. Договорённости фиксируются.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-amber">⚖️</div>
+        <h3>Доверие и уважение</h3>
+        <p>Каждый доверяет компетентности других и уважает их вклад в общее дело.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-green">🔄</div>
+        <h3>Культура обратной связи</h3>
+        <p>Ретроспективы, 1:1, честные разговоры — команда учится и растёт вместе.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- 2e. РОЛИ И ОТВЕТСТВЕННОСТЬ -->
+  <section id="s2e">
+    <div class="section-num">
+      <span class="tag-cyan">02</span>
+      Команда
+    </div>
+    <h2 class="reveal">Роли<br/><span class="highlight">и ответственность</span></h2>
+    <p class="section-lead reveal">Кто за что отвечает — и почему это важно зафиксировать с первого дня</p>
+
+    <div class="reveal" style="display:flex;flex-direction:column;gap:0.75rem;margin-top:2rem;">
+      <div style="display:grid;grid-template-columns:1fr 2fr 2fr;gap:1rem;padding:1rem 1.25rem;background:rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.3);border-radius:12px;align-items:center;">
+        <div style="font-weight:800;font-size:0.9rem;color:#a78bfa;">Project Manager</div>
+        <div style="font-size:0.85rem;color:#cbd5e1;">Сроки, риски, коммуникация, эскалация проблем</div>
+        <div style="font-size:0.82rem;color:#94a3b8;">Отвечает за успех проекта в целом</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 2fr 2fr;gap:1rem;padding:1rem 1.25rem;background:rgba(6,182,212,0.07);border:1px solid rgba(6,182,212,0.2);border-radius:12px;align-items:center;">
+        <div style="font-weight:800;font-size:0.9rem;color:#22d3ee;">Аналитик</div>
+        <div style="font-size:0.85rem;color:#cbd5e1;">Требования, документация, согласование с заказчиком</div>
+        <div style="font-size:0.82rem;color:#94a3b8;">Отвечает за правильность постановки задачи</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 2fr 2fr;gap:1rem;padding:1rem 1.25rem;background:rgba(236,72,153,0.07);border:1px solid rgba(236,72,153,0.2);border-radius:12px;align-items:center;">
+        <div style="font-weight:800;font-size:0.9rem;color:#f472b6;">Дизайнер</div>
+        <div style="font-size:0.85rem;color:#cbd5e1;">UX-исследование, прототипы, UI-система</div>
+        <div style="font-size:0.82rem;color:#94a3b8;">Отвечает за удобство и визуал продукта</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 2fr 2fr;gap:1rem;padding:1rem 1.25rem;background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.2);border-radius:12px;align-items:center;">
+        <div style="font-weight:800;font-size:0.9rem;color:#fbbf24;">Разработчики</div>
+        <div style="font-size:0.85rem;color:#cbd5e1;">Реализация функционала, code review, технический долг</div>
+        <div style="font-size:0.82rem;color:#94a3b8;">Отвечают за работоспособность и качество кода</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 2fr 2fr;gap:1rem;padding:1rem 1.25rem;background:rgba(34,197,94,0.07);border:1px solid rgba(34,197,94,0.2);border-radius:12px;align-items:center;">
+        <div style="font-weight:800;font-size:0.9rem;color:#4ade80;">QA</div>
+        <div style="font-size:0.85rem;color:#cbd5e1;">Тест-кейсы, регрессия, приёмочное тестирование</div>
+        <div style="font-size:0.82rem;color:#94a3b8;">Отвечает за качество финального продукта</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 2fr 2fr;gap:1rem;padding:1rem 1.25rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;align-items:center;">
+        <div style="font-weight:800;font-size:0.9rem;color:#94a3b8;">DevOps</div>
+        <div style="font-size:0.85rem;color:#cbd5e1;">Инфраструктура, деплой, мониторинг, CI/CD</div>
+        <div style="font-size:0.82rem;color:#94a3b8;">Отвечает за стабильность и доступность системы</div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:2rem;padding:1.5rem 1.75rem;background:rgba(124,58,237,0.07);border:1px solid rgba(124,58,237,0.2);border-radius:16px;">
+      <p style="font-size:0.95rem;color:#cbd5e1;margin:0;"><span style="color:#a78bfa;font-weight:700;">Ключевой принцип:</span> роли фиксируются в начале проекта. Когда непонятно, кто отвечает — не отвечает никто.</p>
     </div>
   </section>
 
@@ -1593,10 +1844,39 @@
       <span class="tag-cyan">03</span>
       Инструменты
     </div>
-    <h2 class="reveal">Анатомия<br/>управляемого хаоса</h2>
-    <p class="section-lead reveal">Сложные проекты рассыпаются не от технических ошибок — от информационного вакуума. Прозрачность процессов и предсказуемость сроков — это инженерная задача.</p>
+    <h2 class="reveal" style="white-space:nowrap;">Управляемый хаос: как не дать проекту развалиться</h2>
 
-    <div class="cards cards-2 reveal">
+    <div class="reveal" style="margin-top:2.5rem;margin-bottom:4rem;">
+      <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#f472b6;margin-bottom:1.25rem;">Точки разрушения проекта</div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.75rem;">
+        <div style="display:flex;align-items:center;gap:0.6rem;padding:0.6rem 1.1rem;border-radius:100px;background:rgba(236,72,153,0.08);border:1px solid rgba(236,72,153,0.25);">
+          <span style="width:7px;height:7px;border-radius:50%;background:#ec4899;flex-shrink:0;"></span>
+          <span style="font-size:0.9rem;color:#f1f5f9;">размытые требования</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.6rem;padding:0.6rem 1.1rem;border-radius:100px;background:rgba(236,72,153,0.08);border:1px solid rgba(236,72,153,0.25);">
+          <span style="width:7px;height:7px;border-radius:50%;background:#ec4899;flex-shrink:0;"></span>
+          <span style="font-size:0.9rem;color:#f1f5f9;">бесконечные согласования</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.6rem;padding:0.6rem 1.1rem;border-radius:100px;background:rgba(236,72,153,0.08);border:1px solid rgba(236,72,153,0.25);">
+          <span style="width:7px;height:7px;border-radius:50%;background:#ec4899;flex-shrink:0;"></span>
+          <span style="font-size:0.9rem;color:#f1f5f9;">изменения без контроля</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.6rem;padding:0.6rem 1.1rem;border-radius:100px;background:rgba(236,72,153,0.08);border:1px solid rgba(236,72,153,0.25);">
+          <span style="width:7px;height:7px;border-radius:50%;background:#ec4899;flex-shrink:0;"></span>
+          <span style="font-size:0.9rem;color:#f1f5f9;">отсутствие прозрачности</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.6rem;padding:0.6rem 1.1rem;border-radius:100px;background:rgba(236,72,153,0.08);border:1px solid rgba(236,72,153,0.25);">
+          <span style="width:7px;height:7px;border-radius:50%;background:#ec4899;flex-shrink:0;"></span>
+          <span style="font-size:0.9rem;color:#f1f5f9;">«мы думали, вы это сделаете»</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:1.5rem;">
+      <p style="font-size:1.1rem;font-weight:700;color:#94a3b8;letter-spacing:0.02em;">Основа: прозрачность процессов</p>
+    </div>
+
+    <div class="cards cards-2 reveal" style="margin-top:0;">
       <div class="card">
         <div class="card-icon icon-cyan">📋</div>
         <h3>Единый источник правды</h3>
@@ -1617,16 +1897,6 @@
         <h3>Управление рисками</h3>
         <p>Реестр рисков ведётся с первого дня. Каждый риск: вероятность × влияние × план митигации. Пересматривается каждые две недели.</p>
       </div>
-      <div class="card">
-        <div class="card-icon icon-green">✅</div>
-        <h3>Definition of Done</h3>
-        <p>Задача закрыта только когда: код в main, тесты зелёные, QA проверил, документация обновлена, заказчик принял. Не раньше.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon icon-cyan">🗣️</div>
-        <h3>Governance для госзаказчиков</h3>
-        <p>Каждый контрольный этап — официальный протокол. Контрагент от заказчика имеет право голоса только в рамках согласованного ТЗ.</p>
-      </div>
     </div>
 
     <div class="tools-grid reveal">
@@ -1640,84 +1910,6 @@
       <div class="tool-pill"><span class="tool-dot" style="background:#e10098"></span>GraphQL</div>
       <div class="tool-pill"><span class="tool-dot" style="background:#47a248"></span>MongoDB</div>
       <div class="tool-pill"><span class="tool-dot" style="background:#336791"></span>PostgreSQL</div>
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <!-- 4. ПРОЕКТЫ -->
-  <section id="s4">
-    <div class="section-num">
-      <span class="tag-amber">04</span>
-      Опыт
-    </div>
-    <h2 class="reveal">Знаковые проекты</h2>
-    <p class="section-lead reveal">Каждый проект — это школа. Здесь — те, которые изменили подход к управлению навсегда.</p>
-
-    <div class="projects-grid reveal">
-      <div class="project-card">
-        <div class="project-header">
-          <div class="project-emoji">🏛️</div>
-          <span class="project-tag tag-amber">Госсектор</span>
-        </div>
-        <div class="project-body">
-          <h3>Цифровая платформа для органов власти</h3>
-          <p>Портал государственных услуг с интеграцией в федеральные реестры. Жёсткие требования ИБ, многоуровневое согласование, ФЗ-152.</p>
-          <div class="project-meta">
-            <div class="meta-item"><strong>18 мес.</strong>Длительность</div>
-            <div class="meta-item"><strong>24 чел.</strong>Команда</div>
-            <div class="meta-item"><strong>4 ведомства</strong>Стейкхолдеры</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-header">
-          <div class="project-emoji">🛒</div>
-          <span class="project-tag tag-cyan">E-commerce</span>
-        </div>
-        <div class="project-body">
-          <h3>Маркетплейс федерального ритейлера</h3>
-          <p>Платформа с 50 000+ SKU, ML-рекомендациями, интеграцией с 1С и WMS. Запуск под высокую нагрузку в сезон распродаж.</p>
-          <div class="project-meta">
-            <div class="meta-item"><strong>12 мес.</strong>Длительность</div>
-            <div class="meta-item"><strong>16 чел.</strong>Команда</div>
-            <div class="meta-item"><strong>2M+</strong>Пользователей</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-header">
-          <div class="project-emoji">🏥</div>
-          <span class="project-tag tag-green">MedTech</span>
-        </div>
-        <div class="project-body">
-          <h3>Медицинская информационная система</h3>
-          <p>МИС для сети клиник: электронные карты пациентов, телемедицина, интеграция с лабораториями. Сертификация ФСТЭК.</p>
-          <div class="project-meta">
-            <div class="meta-item"><strong>14 мес.</strong>Длительность</div>
-            <div class="meta-item"><strong>12 чел.</strong>Команда</div>
-            <div class="meta-item"><strong>40 клиник</strong>Внедрение</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-header">
-          <div class="project-emoji">🎓</div>
-          <span class="project-tag tag-purple">EdTech</span>
-        </div>
-        <div class="project-body">
-          <h3>Образовательная платформа</h3>
-          <p>LMS с видеотрансляциями, тестированием, геймификацией и аналитикой обучения. 100 000 студентов в первый месяц.</p>
-          <div class="project-meta">
-            <div class="meta-item"><strong>8 мес.</strong>Длительность</div>
-            <div class="meta-item"><strong>10 чел.</strong>Команда</div>
-            <div class="meta-item"><strong>100K</strong>Пользователей</div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
