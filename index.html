@@ -38,7 +38,11 @@
       width: 100%;
       scroll-snap-type: y mandatory;
       scroll-padding-top: 64px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
     }
+
+    body::-webkit-scrollbar { display: none; }
 
     /* ── NOISE OVERLAY ── */
     body::before {
