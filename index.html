@@ -1594,38 +1594,8 @@
 
   <div class="section-divider"></div>
 
-  <!-- 1. ЧТО ТАКОЕ ПРОЕКТ -->
-  <section id="s1" style="height:100vh;box-sizing:border-box;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:64px 2rem 0;scroll-snap-align:start;">
-    <div class="reveal" style="display:flex;justify-content:center;height:100%;">
-      <img src="proj-construction.png" alt="Проект под контролем" style="max-height:calc(100vh - 64px);width:auto;max-width:100%;display:block;border-radius:20px;" />
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <!-- 1b. КАК НА САМОМ ДЕЛЕ — chaos image -->
-  <section id="s1-chaos" style="height:100vh;box-sizing:border-box;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:64px 2rem 0;scroll-snap-align:start;">
-    <div class="reveal" style="display:flex;justify-content:center;height:100%;">
-      <img src="proj-chaos.png" alt="Как на самом деле" style="max-height:calc(100vh - 64px);width:auto;max-width:100%;display:block;border-radius:20px;" />
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <!-- ПРОЕКТ = ДВИЖЕНИЕ -->
-  <section id="s1-definition" style="position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:5rem clamp(1.25rem,4vw,3rem);scroll-snap-align:start;">
-    <div style="position:absolute;border-radius:50%;filter:blur(140px);opacity:0.22;pointer-events:none;width:700px;height:700px;background:#7c3aed;top:50%;left:50%;transform:translate(-50%,-50%);"></div>
-    <div style="position:absolute;border-radius:50%;filter:blur(120px);opacity:0.14;pointer-events:none;width:400px;height:400px;background:#ec4899;bottom:-80px;right:5%;"></div>
-
-    <h2 style="position:relative;z-index:1;font-size:clamp(2rem,5vw,4.5rem);font-weight:900;line-height:1.1;letter-spacing:-0.02em;text-align:center;max-width:1100px;">
-      Проект = движение к цели через <span style="background:linear-gradient(135deg,#a78bfa,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">неопределённость</span>
-    </h2>
-  </section>
-
-  <div class="section-divider"></div>
-
   <!-- 1b. ЧТО ТАКОЕ ПРОЕКТ -->
-  <section id="s1b" style="padding-top:3rem;padding-bottom:3rem;">
+  <section id="s1b" style="padding-top:3rem;padding-bottom:3rem;min-height:100vh;box-sizing:border-box;">
     <div class="section-num">
       <span class="tag-purple">01</span>
       Основы
@@ -1788,7 +1758,120 @@
         </div>
       </div>
     </div>
+
+    <!-- horizontal flow -->
+    <div class="reveal" style="margin-top:1rem;padding:0 clamp(1.5rem,5vw,4rem) 0;display:flex;flex-direction:column;align-items:center;gap:1rem;">
+      <div style="display:flex;align-items:center;gap:0;flex-wrap:nowrap;">
+
+        <!-- Бизнес -->
+        <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;">
+          <div style="width:48px;height:48px;border-radius:50%;background:rgba(167,139,250,0.15);border:1.5px solid rgba(167,139,250,0.4);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+          </div>
+          <span style="font-size:0.72rem;font-weight:600;letter-spacing:0.04em;color:#c4b5fd;white-space:nowrap;">Бизнес</span>
+        </div>
+
+        <!-- arrow -->
+        <div style="display:flex;align-items:center;padding:0 0.5rem;margin-bottom:1.4rem;">
+          <svg width="32" height="12" viewBox="0 0 32 12" fill="none"><path d="M0 6h28M22 1l6 5-6 5" stroke="rgba(236,72,153,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <!-- Аналитика -->
+        <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;">
+          <div style="width:48px;height:48px;border-radius:50%;background:rgba(167,139,250,0.15);border:1.5px solid rgba(167,139,250,0.4);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <span style="font-size:0.72rem;font-weight:600;letter-spacing:0.04em;color:#c4b5fd;white-space:nowrap;">Аналитика</span>
+        </div>
+
+        <!-- arrow -->
+        <div style="display:flex;align-items:center;padding:0 0.5rem;margin-bottom:1.4rem;">
+          <svg width="32" height="12" viewBox="0 0 32 12" fill="none"><path d="M0 6h28M22 1l6 5-6 5" stroke="rgba(236,72,153,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <!-- Дизайн -->
+        <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;">
+          <div style="width:48px;height:48px;border-radius:50%;background:rgba(167,139,250,0.15);border:1.5px solid rgba(167,139,250,0.4);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+          </div>
+          <span style="font-size:0.72rem;font-weight:600;letter-spacing:0.04em;color:#c4b5fd;white-space:nowrap;">Дизайн</span>
+        </div>
+
+        <!-- arrow -->
+        <div style="display:flex;align-items:center;padding:0 0.5rem;margin-bottom:1.4rem;">
+          <svg width="32" height="12" viewBox="0 0 32 12" fill="none"><path d="M0 6h28M22 1l6 5-6 5" stroke="rgba(236,72,153,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <!-- Разработка -->
+        <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;">
+          <div style="width:48px;height:48px;border-radius:50%;background:rgba(167,139,250,0.15);border:1.5px solid rgba(167,139,250,0.4);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <span style="font-size:0.72rem;font-weight:600;letter-spacing:0.04em;color:#c4b5fd;white-space:nowrap;">Разработка</span>
+        </div>
+
+        <!-- arrow -->
+        <div style="display:flex;align-items:center;padding:0 0.5rem;margin-bottom:1.4rem;">
+          <svg width="32" height="12" viewBox="0 0 32 12" fill="none"><path d="M0 6h28M22 1l6 5-6 5" stroke="rgba(236,72,153,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <!-- QA -->
+        <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;">
+          <div style="width:48px;height:48px;border-radius:50%;background:rgba(167,139,250,0.15);border:1.5px solid rgba(167,139,250,0.4);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <span style="font-size:0.72rem;font-weight:600;letter-spacing:0.04em;color:#c4b5fd;white-space:nowrap;">QA</span>
+        </div>
+
+        <!-- arrow -->
+        <div style="display:flex;align-items:center;padding:0 0.5rem;margin-bottom:1.4rem;">
+          <svg width="32" height="12" viewBox="0 0 32 12" fill="none"><path d="M0 6h28M22 1l6 5-6 5" stroke="rgba(236,72,153,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <!-- Релиз -->
+        <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;">
+          <div style="width:48px;height:48px;border-radius:50%;background:rgba(236,72,153,0.2);border:1.5px solid rgba(236,72,153,0.55);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <span style="font-size:0.72rem;font-weight:600;letter-spacing:0.04em;color:#f472b6;white-space:nowrap;">Релиз</span>
+        </div>
+
+      </div>
+
+      <p style="font-size:0.75rem;color:rgba(148,163,184,0.7);letter-spacing:0.06em;text-transform:uppercase;margin:0;">Каждый этап влияет на следующий</p>
+    </div>
+
   </section>
+  <div class="section-divider"></div>
+
+  <!-- 1. ЧТО ТАКОЕ ПРОЕКТ -->
+  <section id="s1" style="height:100vh;box-sizing:border-box;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:64px 2rem 0;scroll-snap-align:start;">
+    <div class="reveal" style="display:flex;justify-content:center;height:100%;">
+      <img src="proj-construction.png" alt="Проект под контролем" style="max-height:calc(100vh - 64px);width:auto;max-width:100%;display:block;border-radius:20px;" />
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- 1b. КАК НА САМОМ ДЕЛЕ — chaos image -->
+  <section id="s1-chaos" style="height:100vh;box-sizing:border-box;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:64px 2rem 0;scroll-snap-align:start;">
+    <div class="reveal" style="display:flex;justify-content:center;height:100%;">
+      <img src="proj-chaos.png" alt="Как на самом деле" style="max-height:calc(100vh - 64px);width:auto;max-width:100%;display:block;border-radius:20px;" />
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ПРОЕКТ = ДВИЖЕНИЕ -->
+  <section id="s1-definition" style="position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:5rem clamp(1.25rem,4vw,3rem);scroll-snap-align:start;">
+    <div style="position:absolute;border-radius:50%;filter:blur(140px);opacity:0.22;pointer-events:none;width:700px;height:700px;background:#7c3aed;top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+    <div style="position:absolute;border-radius:50%;filter:blur(120px);opacity:0.14;pointer-events:none;width:400px;height:400px;background:#ec4899;bottom:-80px;right:5%;"></div>
+
+    <h2 style="position:relative;z-index:1;font-size:clamp(2rem,5vw,4.5rem);font-weight:900;line-height:1.1;letter-spacing:-0.02em;text-align:center;max-width:1100px;">
+      Проект = движение к цели через <span style="background:linear-gradient(135deg,#a78bfa,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">неопределённость</span>
+    </h2>
+  </section>
+
 
   <div class="section-divider"></div>
 
