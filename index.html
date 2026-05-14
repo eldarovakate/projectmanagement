@@ -1118,6 +1118,19 @@
     }
     #s2b .card h3 { color: #1e2d3d; }
     #s2b .card p { color: #4a6080; }
+
+    /* ── S1B LIGHT THEME ── */
+    #s1b { background: #f1f5f9 !important; }
+    #s1b .s1-headline { color: #0f172a !important; -webkit-text-fill-color: #0f172a !important; }
+    #s1b .s1-sat-circle {
+      background: #fff !important;
+      border-color: rgba(124,58,237,0.3) !important;
+      box-shadow: 0 4px 20px rgba(124,58,237,0.1) !important;
+    }
+    #s1b .s1-sat-label strong { color: #0f172a !important; }
+    #s1b .s1-sat-label span { color: #475569 !important; }
+    #s1b span { color: #3730a3 !important; }
+    #s1b .reveal p { color: #64748b !important; }
   </style>
 </head>
 <body>
@@ -1158,7 +1171,7 @@
       </div>
       <div class="speaker-info">
         <div class="speaker-name">Екатерина Эльдарова</div>
-        <div class="speaker-role">Development Director · Notamedia</div>
+        <div class="speaker-role">Руководитель подразделения веб-разработки · Notamedia</div>
       </div>
     </div>
 
@@ -1287,53 +1300,6 @@
 
   <div class="section-divider"></div>
 
-  <!-- Q4: КТО СЧИТАЕТ, ЧТО ПРОЕКТ — ЭТО ИДЕАЛЬНАЯ СИСТЕМА? -->
-  <section id="q4" style="position:relative;overflow:hidden;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5rem clamp(1.25rem,4vw,3rem);">
-    <div style="position:absolute;top:15%;left:50%;transform:translateX(-50%);width:550px;height:550px;background:radial-gradient(circle,rgba(6,182,212,0.15) 0%,transparent 70%);pointer-events:none;"></div>
-    <div style="position:absolute;bottom:5%;right:5%;width:300px;height:300px;background:radial-gradient(circle,rgba(236,72,153,0.15) 0%,transparent 70%);pointer-events:none;"></div>
-
-    <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent3);margin-bottom:1.5rem;position:relative;">ВОПРОС</p>
-
-    <!-- checklist with glitch -->
-    <div style="position:relative;margin-bottom:2.5rem;">
-      <div style="position:absolute;inset:-24px;background:radial-gradient(circle,rgba(6,182,212,0.3) 0%,transparent 70%);border-radius:50%;filter:blur(18px);"></div>
-      <!-- main icon -->
-      <svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="url(#check-grad)" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="position:relative;">
-        <defs>
-          <linearGradient id="check-grad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#06b6d4"/>
-            <stop offset="100%" stop-color="#7c3aed"/>
-          </linearGradient>
-        </defs>
-        <rect x="3" y="3" width="18" height="18" rx="2"/>
-        <path d="m9 12 2 2 4-4"/>
-        <line x1="3" y1="8" x2="21" y2="8"/>
-      </svg>
-      <!-- glitch overlay — shifted red ghost -->
-      <svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="rgba(236,72,153,0.35)" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="position:absolute;top:-3px;left:4px;">
-        <rect x="3" y="3" width="18" height="18" rx="2"/>
-        <path d="m9 12 2 2 4-4"/>
-        <line x1="3" y1="8" x2="21" y2="8"/>
-      </svg>
-      <!-- glitch overlay — shifted cyan ghost -->
-      <svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="rgba(6,182,212,0.25)" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="position:absolute;top:3px;left:-4px;">
-        <rect x="3" y="3" width="18" height="18" rx="2"/>
-        <path d="m9 12 2 2 4-4"/>
-        <line x1="3" y1="8" x2="21" y2="8"/>
-      </svg>
-    </div>
-
-    <h2 style="font-size:clamp(2rem,7.5vw,5.5rem);font-weight:900;line-height:1.05;letter-spacing:-0.02em;text-transform:uppercase;background:linear-gradient(135deg,#fff 20%,#67e8f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:2.5rem;position:relative;">
-      КТО СЧИТАЕТ,<br/>ЧТО ПРОЕКТ —<br/>ЭТО ИДЕАЛЬНАЯ<br/>СИСТЕМА?
-    </h2>
-
-    <p style="font-size:0.95rem;color:var(--muted);letter-spacing:0.04em;position:relative;">
-      Сейчас проверим реальность 😌
-    </p>
-  </section>
-
-  <div class="section-divider"></div>
-
   <!-- Q5: КТО-НИБУДЬ ЗНАЕТ NOTAMEDIA? -->
   <section id="q5" style="position:relative;overflow:hidden;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5rem clamp(1.25rem,4vw,3rem);">
     <div style="position:absolute;top:20%;left:50%;transform:translateX(-50%);width:480px;height:480px;background:radial-gradient(circle,rgba(124,58,237,0.2) 0%,transparent 70%);pointer-events:none;"></div>
@@ -1408,6 +1374,7 @@
 
     <div style="position:relative;width:100%;max-width:900px;margin:0 auto 2.5rem;border-radius:16px;overflow:hidden;box-shadow:0 0 60px rgba(124,58,237,0.2),0 0 0 1px rgba(255,255,255,0.06);">
       <img src="gosuslugi-kultura.png" alt="Госуслуги Культура" style="width:100%;height:auto;display:block;" />
+      <span style="position:absolute;top:10.5%;right:1.6%;font-size:0.62rem;font-weight:500;color:rgba(255,255,255,0.65);letter-spacing:0.04em;line-height:1;">2021 г.</span>
     </div>
 
     <h2 style="font-size:clamp(1.4rem,3.5vw,2.4rem);font-weight:800;line-height:1.2;letter-spacing:-0.01em;background:linear-gradient(135deg,#fff 30%,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative;">
@@ -1568,7 +1535,7 @@
   <div class="section-divider" style="background:rgba(26,86,160,0.12);"></div>
 
   <!-- ABOUT ME -->
-  <section id="about" style="position:relative;overflow:hidden;background:#fff;font-family:'Montserrat','Segoe UI',Arial,sans-serif;">
+  <section id="about" style="position:relative;overflow:hidden;background:#fff;font-family:'Montserrat','Segoe UI',Arial,sans-serif;min-height:100svh;display:flex;flex-direction:column;justify-content:center;gap:2rem;padding:4.5rem clamp(1.25rem,4vw,3rem) 3rem;">
     <div style="position:absolute;width:500px;height:500px;background:#1a56a0;border-radius:50%;filter:blur(180px);opacity:0.06;top:-100px;right:-100px;pointer-events:none;"></div>
     <div style="position:absolute;width:400px;height:400px;background:#1a8a4a;border-radius:50%;filter:blur(180px);opacity:0.05;bottom:-80px;left:-80px;pointer-events:none;"></div>
 
@@ -1576,41 +1543,72 @@
 
       <!-- photo -->
       <div style="flex-shrink:0;">
-        <div style="width:clamp(200px,22vw,300px);border-radius:24px;overflow:hidden;box-shadow:0 8px 40px rgba(26,86,160,0.12),0 0 0 1px rgba(26,86,160,0.08);">
+        <div style="width:clamp(180px,20vw,260px);border-radius:24px;overflow:hidden;box-shadow:0 8px 40px rgba(26,86,160,0.12),0 0 0 1px rgba(26,86,160,0.08);">
           <img src="about-photo.jpg" alt="Екатерина Эльдарова" style="width:100%;height:auto;display:block;object-fit:cover;" />
         </div>
       </div>
 
       <!-- bio -->
-      <div style="padding-top:0.5rem;">
-        <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:#0f172a;line-height:1.15;margin-bottom:0.4rem;">Эльдарова Екатерина</h2>
-        <p style="font-size:clamp(0.9rem,1.4vw,1.05rem);font-weight:600;background:linear-gradient(135deg,#1a6fc4,#1a9e72);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:2rem;line-height:1.4;">Руководитель web-разработки в Notamedia.Agency</p>
+      <div style="padding-top:0.25rem;">
+        <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:#0f172a;line-height:1.15;margin-bottom:0.35rem;">Эльдарова Екатерина</h2>
+        <p style="font-size:clamp(0.9rem,1.4vw,1.05rem);font-weight:600;background:linear-gradient(135deg,#1a6fc4,#1a9e72);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:1rem;line-height:1.4;">Руководитель web-разработки в Notamedia.Agency</p>
 
-        <div style="display:flex;flex-direction:column;gap:1.25rem;">
+        <div style="display:flex;flex-direction:column;gap:0.5rem;">
 
-          <div style="background:rgba(234,244,255,0.7);border:1px solid rgba(26,86,160,0.1);border-radius:16px;padding:1.1rem 1.25rem;">
-            <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#7a92a8;margin-bottom:0.5rem;">Опыт</div>
-            <p style="font-size:0.9rem;color:#1e2d3d;line-height:1.6;font-weight:400;">Более 10 лет занимаюсь управлением проектами в IT.</p>
+          <div style="background:rgba(234,244,255,0.7);border:1px solid rgba(26,86,160,0.1);border-radius:14px;padding:0.55rem 1.1rem;">
+            <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#7a92a8;margin-bottom:0.2rem;">Опыт</div>
+            <p style="font-size:0.88rem;color:#1e2d3d;line-height:1.4;font-weight:400;">Более 10 лет занимаюсь управлением проектами в IT.</p>
           </div>
 
-          <div style="background:rgba(234,244,255,0.7);border:1px solid rgba(26,86,160,0.1);border-radius:16px;padding:1.1rem 1.25rem;">
-            <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#7a92a8;margin-bottom:0.5rem;">Образование</div>
-            <p style="font-size:0.9rem;color:#1e2d3d;line-height:1.6;font-weight:400;">Воронежский государственный университет<br/>Факультет прикладной математики, информатики и механики.</p>
+          <div style="background:rgba(234,244,255,0.7);border:1px solid rgba(26,86,160,0.1);border-radius:14px;padding:0.55rem 1.1rem;">
+            <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#7a92a8;margin-bottom:0.2rem;">Образование</div>
+            <p style="font-size:0.88rem;color:#1e2d3d;line-height:1.4;font-weight:400;">Воронежский государственный университет<br/>Факультет прикладной математики, информатики и механики.</p>
           </div>
 
-          <div style="background:rgba(234,248,241,0.7);border:1px solid rgba(26,168,74,0.1);border-radius:16px;padding:1.1rem 1.25rem;">
-            <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#7a92a8;margin-bottom:0.5rem;">Проекты</div>
-            <p style="font-size:0.9rem;color:#1e2d3d;line-height:1.6;font-weight:400;">Под моим руководством реализуются ключевые web проекты для государственных и городских платформ — Экосистема RUSSPASS, Москва 2030, Путешествуем.рф, Лето в Москве, Суперразделы MOS.RU и другие крупные инициативы Правительства Москвы. Самый крупный бюджет проекта — 240 млн.руб.</p>
+          <div style="background:rgba(234,248,241,0.7);border:1px solid rgba(26,168,74,0.1);border-radius:14px;padding:0.55rem 1.1rem;">
+            <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#7a92a8;margin-bottom:0.2rem;">Проекты</div>
+            <p style="font-size:0.88rem;color:#1e2d3d;line-height:1.4;font-weight:400;">Под моим руководством реализуются ключевые web проекты для государственных и городских платформ — Экосистема RUSSPASS, Москва 2030, Путешествуем.рф, Лето в Москве, Суперразделы MOS.RU и другие крупные инициативы Правительства Москвы. Самый крупный бюджет проекта — 240 млн.руб.</p>
           </div>
 
-          <div style="background:rgba(234,248,241,0.7);border:1px solid rgba(26,168,74,0.1);border-radius:16px;padding:1.1rem 1.25rem;">
-            <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#7a92a8;margin-bottom:0.5rem;">Зона ответственности</div>
-            <p style="font-size:0.9rem;color:#1e2d3d;line-height:1.6;font-weight:400;">Курирую всю веб-разработку и брендинг компании, объединяя технологический и креативный подход к созданию цифровых экосистем.</p>
+          <div style="background:rgba(234,248,241,0.7);border:1px solid rgba(26,168,74,0.1);border-radius:14px;padding:0.55rem 1.1rem;">
+            <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#7a92a8;margin-bottom:0.2rem;">Зона ответственности</div>
+            <p style="font-size:0.88rem;color:#1e2d3d;line-height:1.4;font-weight:400;">Курирую всю веб-разработку и брендинг компании, объединяя технологический и креативный подход к созданию цифровых экосистем.</p>
           </div>
 
         </div>
       </div>
     </div>
+
+    <!-- project photo cards -->
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0.75rem;">
+
+      <div style="border-radius:14px;overflow:hidden;position:relative;aspect-ratio:16/10;box-shadow:0 4px 18px rgba(26,86,160,0.13);">
+        <img src="proj-russpass-biz.png" alt="RUSSPASS BUSINESS" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:0.45rem 0.7rem;background:linear-gradient(to top,rgba(0,0,0,0.75),transparent);color:#fff;font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">RUSSPASS BUSINESS</div>
+      </div>
+
+      <div style="border-radius:14px;overflow:hidden;position:relative;aspect-ratio:16/10;box-shadow:0 4px 18px rgba(26,86,160,0.13);">
+        <img src="proj-aurus.png" alt="AURUS" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:0.45rem 0.7rem;background:linear-gradient(to top,rgba(0,0,0,0.75),transparent);color:#fff;font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">AURUS</div>
+      </div>
+
+      <div style="border-radius:14px;overflow:hidden;position:relative;aspect-ratio:16/10;box-shadow:0 4px 18px rgba(26,86,160,0.13);">
+        <img src="proj-novgod.png" alt="Новогодняя Москва" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:0.45rem 0.7rem;background:linear-gradient(to top,rgba(0,0,0,0.75),transparent);color:#fff;font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">Новогодняя Москва</div>
+      </div>
+
+      <div style="border-radius:14px;overflow:hidden;position:relative;aspect-ratio:16/10;box-shadow:0 4px 18px rgba(26,86,160,0.13);">
+        <img src="proj-sitcenter.png" alt="Ситуационный центр" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:0.45rem 0.7rem;background:linear-gradient(to top,rgba(0,0,0,0.75),transparent);color:#fff;font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">Ситуационный центр</div>
+      </div>
+
+      <div style="border-radius:14px;overflow:hidden;position:relative;aspect-ratio:16/10;box-shadow:0 4px 18px rgba(26,86,160,0.13);">
+        <img src="proj-iri.png" alt="ИРИ" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:0.45rem 0.7rem;background:linear-gradient(to top,rgba(0,0,0,0.75),transparent);color:#fff;font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">ИРИ</div>
+      </div>
+
+    </div>
+
   </section>
 
   <div class="section-divider" style="background:rgba(26,86,160,0.12);"></div>
@@ -1633,19 +1631,64 @@
 
   <div class="section-divider"></div>
 
+  <!-- Q4: КТО СЧИТАЕТ, ЧТО ПРОЕКТ — ЭТО ИДЕАЛЬНАЯ СИСТЕМА? -->
+  <section id="q4" style="position:relative;overflow:hidden;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5rem clamp(1.25rem,4vw,3rem);">
+    <div style="position:absolute;top:15%;left:50%;transform:translateX(-50%);width:550px;height:550px;background:radial-gradient(circle,rgba(6,182,212,0.15) 0%,transparent 70%);pointer-events:none;"></div>
+    <div style="position:absolute;bottom:5%;right:5%;width:300px;height:300px;background:radial-gradient(circle,rgba(236,72,153,0.15) 0%,transparent 70%);pointer-events:none;"></div>
+
+    <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent3);margin-bottom:1.5rem;position:relative;">ВОПРОС</p>
+
+    <!-- checklist with glitch -->
+    <div style="position:relative;margin-bottom:2.5rem;">
+      <div style="position:absolute;inset:-24px;background:radial-gradient(circle,rgba(6,182,212,0.3) 0%,transparent 70%);border-radius:50%;filter:blur(18px);"></div>
+      <!-- main icon -->
+      <svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="url(#check-grad)" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="position:relative;">
+        <defs>
+          <linearGradient id="check-grad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#06b6d4"/>
+            <stop offset="100%" stop-color="#7c3aed"/>
+          </linearGradient>
+        </defs>
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+        <path d="m9 12 2 2 4-4"/>
+        <line x1="3" y1="8" x2="21" y2="8"/>
+      </svg>
+      <!-- glitch overlay — shifted red ghost -->
+      <svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="rgba(236,72,153,0.35)" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="position:absolute;top:-3px;left:4px;">
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+        <path d="m9 12 2 2 4-4"/>
+        <line x1="3" y1="8" x2="21" y2="8"/>
+      </svg>
+      <!-- glitch overlay — shifted cyan ghost -->
+      <svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="rgba(6,182,212,0.25)" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="position:absolute;top:3px;left:-4px;">
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+        <path d="m9 12 2 2 4-4"/>
+        <line x1="3" y1="8" x2="21" y2="8"/>
+      </svg>
+    </div>
+
+    <h2 style="font-size:clamp(2rem,7.5vw,5.5rem);font-weight:900;line-height:1.05;letter-spacing:-0.02em;text-transform:uppercase;background:linear-gradient(135deg,#fff 20%,#67e8f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:2.5rem;position:relative;">
+      КТО СЧИТАЕТ,<br/>ЧТО ПРОЕКТ —<br/>ЭТО ИДЕАЛЬНАЯ<br/>СИСТЕМА?
+    </h2>
+
+    <p style="font-size:0.95rem;color:var(--muted);letter-spacing:0.04em;position:relative;">
+      Сейчас проверим реальность 😌
+    </p>
+  </section>
+
+  <div class="section-divider"></div>
+
   <!-- 1b. ЧТО ТАКОЕ ПРОЕКТ -->
-  <section id="s1b" style="padding-top:3rem;padding-bottom:3rem;min-height:100vh;box-sizing:border-box;">
+  <section id="s1b" style="padding-top:3rem;padding-bottom:3rem;min-height:100vh;box-sizing:border-box;background:#f1f5f9;">
     <div class="section-num">
       <span class="tag-purple">01</span>
       Основы
     </div>
 
-    <div class="reveal" style="text-align:center;margin-bottom:0.5rem;">
-      <h3 class="s1-headline" style="font-size:clamp(2.5rem,5vw,5rem)!important;display:inline-block;">ПРОЕКТ</h3>
-      <div class="s1-rule" style="margin:0.5rem auto 0;"></div>
-    </div>
-
-    <div class="reveal" style="display:flex;justify-content:center;overflow:visible;">
+    <div class="reveal" style="display:flex;align-items:flex-start;justify-content:center;overflow:visible;gap:5rem;">
+      <div style="flex-shrink:0;padding-left:clamp(1rem,3vw,3rem);padding-top:4rem;">
+        <h3 class="s1-headline" style="font-size:clamp(2.5rem,5vw,5rem)!important;display:block;">ПРОЕКТ</h3>
+      </div>
       <div class="s1-right" style="overflow:visible;">
         <div class="s1-orbit-wrap">
 
@@ -1799,7 +1842,7 @@
     </div>
 
     <!-- horizontal flow -->
-    <div class="reveal" style="margin-top:1rem;padding:0 clamp(1.5rem,5vw,4rem) 0;display:flex;flex-direction:column;align-items:center;gap:1rem;">
+    <div class="reveal" style="margin-top:1rem;padding:0 clamp(1.5rem,5vw,4rem) 0;display:flex;flex-direction:column;align-items:flex-start;gap:1rem;">
       <div style="display:flex;align-items:center;gap:0;flex-wrap:nowrap;">
 
         <!-- Бизнес -->
@@ -1921,98 +1964,68 @@
       Команда
     </div>
     <h2 class="reveal">Состав команды <span class="highlight">в IT-проекте</span></h2>
+    <p class="section-lead reveal" style="color:#4a6080;"><span style="color:#7c3aed;font-weight:700;">Ключевой принцип:</span> роли фиксируются в начале проекта. Когда непонятно, кто отвечает — не отвечает никто.</p>
 
-    <div class="reveal" style="margin-top:2rem;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(0.75rem,1.5vw,1.5rem);">
+    <div class="reveal" style="margin-top:1.5rem;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(0.75rem,1.5vw,1.25rem);">
+
       <div class="card">
         <div class="card-icon icon-purple">🧭</div>
         <h3>Project Manager</h3>
         <p>Отвечает за сроки, коммуникацию и управление рисками. Держит всё вместе.</p>
+        <p style="font-size:0.75rem;color:#64748b;margin-top:0.6rem;padding-top:0.6rem;border-top:1px solid rgba(0,0,0,0.07);">Сроки, риски, коммуникация, эскалация проблем</p>
       </div>
+
       <div class="card">
         <div class="card-icon icon-cyan">📐</div>
         <h3>Аналитик / BA</h3>
         <p>Формализует требования, строит мост между бизнесом и разработчиками.</p>
+        <p style="font-size:0.75rem;color:#64748b;margin-top:0.6rem;padding-top:0.6rem;border-top:1px solid rgba(0,0,0,0.07);">Требования, документация, согласование с заказчиком</p>
       </div>
+
       <div class="card">
         <div class="card-icon icon-pink">🎨</div>
         <h3>Дизайнер / UX</h3>
         <p>Создаёт интерфейс, опыт пользователя и визуальную концепцию продукта.</p>
+        <p style="font-size:0.75rem;color:#64748b;margin-top:0.6rem;padding-top:0.6rem;border-top:1px solid rgba(0,0,0,0.07);">UX-исследование, прототипы, UI-система</p>
       </div>
+
       <div class="card">
         <div class="card-icon icon-amber">⚙️</div>
         <h3>Backend-разработчик</h3>
         <p>Строит серверную логику, API, базы данных и интеграции.</p>
+        <p style="font-size:0.75rem;color:#64748b;margin-top:0.6rem;padding-top:0.6rem;border-top:1px solid rgba(0,0,0,0.07);">Реализация функционала, code review, технический долг</p>
       </div>
+
       <div class="card">
         <div class="card-icon icon-cyan">🖥️</div>
         <h3>Frontend-разработчик</h3>
         <p>Реализует интерфейс, анимации и взаимодействие с пользователем.</p>
+        <p style="font-size:0.75rem;color:#64748b;margin-top:0.6rem;padding-top:0.6rem;border-top:1px solid rgba(0,0,0,0.07);">Реализация интерфейса, качество кода на фронте</p>
       </div>
+
       <div class="card">
         <div class="card-icon icon-green">✅</div>
         <h3>QA-инженер</h3>
         <p>Тестирует продукт, ищет баги и следит за качеством на всех этапах.</p>
+        <p style="font-size:0.75rem;color:#64748b;margin-top:0.6rem;padding-top:0.6rem;border-top:1px solid rgba(0,0,0,0.07);">Тест-кейсы, регрессия, приёмочное тестирование</p>
       </div>
+
       <div class="card">
         <div class="card-icon icon-purple">🛠️</div>
         <h3>DevOps-инженер</h3>
         <p>Обеспечивает инфраструктуру, CI/CD и стабильность развёртывания.</p>
+        <p style="font-size:0.75rem;color:#64748b;margin-top:0.6rem;padding-top:0.6rem;border-top:1px solid rgba(0,0,0,0.07);">Инфраструктура, деплой, мониторинг, CI/CD</p>
       </div>
+
       <div class="card">
         <div class="card-icon icon-pink">👤</div>
         <h3>Заказчик / Product Owner</h3>
         <p>Определяет приоритеты, принимает решения и является голосом бизнеса.</p>
+        <p style="font-size:0.75rem;color:#64748b;margin-top:0.6rem;padding-top:0.6rem;border-top:1px solid rgba(0,0,0,0.07);">Постановка задач, приёмка, ответственность за продукт</p>
       </div>
-    </div>
-  </section>
 
-  <div class="section-divider"></div>
-
-  <!-- 2e. РОЛИ И ОТВЕТСТВЕННОСТЬ -->
-  <section id="s2e">
-    <div class="section-num">
-      <span class="tag-cyan">02</span>
-      Команда
-    </div>
-    <h2 class="reveal">Роли<br/><span class="highlight">и ответственность</span></h2>
-    <p class="section-lead reveal">Кто за что отвечает — и почему это важно зафиксировать с первого дня</p>
-
-    <div class="reveal" style="display:flex;flex-direction:column;gap:0.75rem;margin-top:2rem;">
-      <div style="display:grid;grid-template-columns:1fr 2fr 2fr;gap:1rem;padding:1rem 1.25rem;background:rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.3);border-radius:12px;align-items:center;">
-        <div style="font-weight:800;font-size:0.9rem;color:#a78bfa;">Project Manager</div>
-        <div style="font-size:0.85rem;color:#cbd5e1;">Сроки, риски, коммуникация, эскалация проблем</div>
-        <div style="font-size:0.82rem;color:#94a3b8;">Отвечает за успех проекта в целом</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 2fr 2fr;gap:1rem;padding:1rem 1.25rem;background:rgba(6,182,212,0.07);border:1px solid rgba(6,182,212,0.2);border-radius:12px;align-items:center;">
-        <div style="font-weight:800;font-size:0.9rem;color:#22d3ee;">Аналитик</div>
-        <div style="font-size:0.85rem;color:#cbd5e1;">Требования, документация, согласование с заказчиком</div>
-        <div style="font-size:0.82rem;color:#94a3b8;">Отвечает за правильность постановки задачи</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 2fr 2fr;gap:1rem;padding:1rem 1.25rem;background:rgba(236,72,153,0.07);border:1px solid rgba(236,72,153,0.2);border-radius:12px;align-items:center;">
-        <div style="font-weight:800;font-size:0.9rem;color:#f472b6;">Дизайнер</div>
-        <div style="font-size:0.85rem;color:#cbd5e1;">UX-исследование, прототипы, UI-система</div>
-        <div style="font-size:0.82rem;color:#94a3b8;">Отвечает за удобство и визуал продукта</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 2fr 2fr;gap:1rem;padding:1rem 1.25rem;background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.2);border-radius:12px;align-items:center;">
-        <div style="font-weight:800;font-size:0.9rem;color:#fbbf24;">Разработчики</div>
-        <div style="font-size:0.85rem;color:#cbd5e1;">Реализация функционала, code review, технический долг</div>
-        <div style="font-size:0.82rem;color:#94a3b8;">Отвечают за работоспособность и качество кода</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 2fr 2fr;gap:1rem;padding:1rem 1.25rem;background:rgba(34,197,94,0.07);border:1px solid rgba(34,197,94,0.2);border-radius:12px;align-items:center;">
-        <div style="font-weight:800;font-size:0.9rem;color:#4ade80;">QA</div>
-        <div style="font-size:0.85rem;color:#cbd5e1;">Тест-кейсы, регрессия, приёмочное тестирование</div>
-        <div style="font-size:0.82rem;color:#94a3b8;">Отвечает за качество финального продукта</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 2fr 2fr;gap:1rem;padding:1rem 1.25rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;align-items:center;">
-        <div style="font-weight:800;font-size:0.9rem;color:#94a3b8;">DevOps</div>
-        <div style="font-size:0.85rem;color:#cbd5e1;">Инфраструктура, деплой, мониторинг, CI/CD</div>
-        <div style="font-size:0.82rem;color:#94a3b8;">Отвечает за стабильность и доступность системы</div>
-      </div>
     </div>
 
-    <div class="reveal" style="margin-top:2rem;padding:1.5rem 1.75rem;background:rgba(124,58,237,0.07);border:1px solid rgba(124,58,237,0.2);border-radius:16px;">
-      <p style="font-size:0.95rem;color:#cbd5e1;margin:0;"><span style="color:#a78bfa;font-weight:700;">Ключевой принцип:</span> роли фиксируются в начале проекта. Когда непонятно, кто отвечает — не отвечает никто.</p>
-    </div>
   </section>
 
   <div class="section-divider"></div>
@@ -2124,73 +2137,63 @@
     <h2 class="reveal" style="text-align:center;">Команда <span class="highlight">≠</span> набор людей</h2>
     <p class="section-lead reveal" style="text-align:center;margin-left:auto;margin-right:auto;">Разница между группой и настоящей командой — в системе взаимодействия</p>
 
-    <div class="reveal" style="display:grid;grid-template-columns:1fr auto 1fr;gap:1.5rem;align-items:start;margin-top:2rem;">
-      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:2rem;">
-        <div style="font-size:2.5rem;margin-bottom:1rem;">👥</div>
-        <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#94a3b8;margin-bottom:1.25rem;">Набор людей</div>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.8rem;">
-          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.95rem;color:#94a3b8;"><span style="color:#ef4444;font-weight:700;">✕</span> Каждый работает сам по себе</li>
-          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.95rem;color:#94a3b8;"><span style="color:#ef4444;font-weight:700;">✕</span> Нет общей цели</li>
-          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.95rem;color:#94a3b8;"><span style="color:#ef4444;font-weight:700;">✕</span> Непонятно, кто за что отвечает</li>
-          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.95rem;color:#94a3b8;"><span style="color:#ef4444;font-weight:700;">✕</span> Конфликты не разрешаются</li>
-          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.95rem;color:#94a3b8;"><span style="color:#ef4444;font-weight:700;">✕</span> Информация теряется</li>
+    <div class="reveal" style="display:grid;grid-template-columns:1fr auto 1fr;gap:1.5rem;align-items:start;margin-top:1.5rem;">
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:1.5rem 2rem;">
+        <div style="font-size:2rem;margin-bottom:0.75rem;">👥</div>
+        <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#94a3b8;margin-bottom:1rem;">Набор людей</div>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.6rem;">
+          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;color:#94a3b8;"><span style="color:#ef4444;font-weight:700;">✕</span> Каждый работает сам по себе</li>
+          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;color:#94a3b8;"><span style="color:#ef4444;font-weight:700;">✕</span> Нет общей цели</li>
+          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;color:#94a3b8;"><span style="color:#ef4444;font-weight:700;">✕</span> Непонятно, кто за что отвечает</li>
+          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;color:#94a3b8;"><span style="color:#ef4444;font-weight:700;">✕</span> Конфликты не разрешаются</li>
+          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;color:#94a3b8;"><span style="color:#ef4444;font-weight:700;">✕</span> Информация теряется</li>
         </ul>
       </div>
 
-      <div style="display:flex;align-items:center;justify-content:center;padding-top:5rem;">
+      <div style="display:flex;align-items:center;justify-content:center;padding-top:4rem;">
         <div style="font-size:2.5rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">≠</div>
       </div>
 
-      <div style="position:relative;overflow:hidden;border-radius:20px;padding:2rem;border:1px solid rgba(6,182,212,0.3);background:linear-gradient(135deg,rgba(6,182,212,0.08),rgba(124,58,237,0.12));">
-        <div style="font-size:2.5rem;margin-bottom:1rem;">⚡</div>
-        <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#22d3ee;margin-bottom:1.25rem;">Команда = система взаимодействия</div>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.8rem;">
-          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.95rem;color:#f1f5f9;"><span style="color:#4ade80;font-weight:700;">✓</span> Синхронизированные цели</li>
-          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.95rem;color:#f1f5f9;"><span style="color:#4ade80;font-weight:700;">✓</span> Чёткие роли и ответственности</li>
-          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.95rem;color:#f1f5f9;"><span style="color:#4ade80;font-weight:700;">✓</span> Прозрачная коммуникация</li>
-          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.95rem;color:#f1f5f9;"><span style="color:#4ade80;font-weight:700;">✓</span> Конфликты решаются внутри</li>
-          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.95rem;color:#f1f5f9;"><span style="color:#4ade80;font-weight:700;">✓</span> Знания передаются и сохраняются</li>
+      <div style="position:relative;overflow:hidden;border-radius:20px;padding:1.5rem 2rem;border:1px solid rgba(6,182,212,0.3);background:linear-gradient(135deg,rgba(6,182,212,0.08),rgba(124,58,237,0.12));">
+        <div style="font-size:2rem;margin-bottom:0.75rem;">⚡</div>
+        <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#22d3ee;margin-bottom:1rem;">Команда = система взаимодействия</div>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.6rem;">
+          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;color:#f1f5f9;"><span style="color:#4ade80;font-weight:700;">✓</span> Синхронизированные цели</li>
+          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;color:#f1f5f9;"><span style="color:#4ade80;font-weight:700;">✓</span> Чёткие роли и ответственности</li>
+          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;color:#f1f5f9;"><span style="color:#4ade80;font-weight:700;">✓</span> Прозрачная коммуникация</li>
+          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;color:#f1f5f9;"><span style="color:#4ade80;font-weight:700;">✓</span> Конфликты решаются внутри</li>
+          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;color:#f1f5f9;"><span style="color:#4ade80;font-weight:700;">✓</span> Знания передаются и сохраняются</li>
         </ul>
       </div>
     </div>
-  </section>
 
-  <div class="section-divider"></div>
+    <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin:2rem 0 1rem;" class="reveal">Что делает команду рабочей — 5 факторов</p>
 
-  <!-- 2d. ЧТО ДЕЛАЕТ КОМАНДУ РАБОЧЕЙ -->
-  <section id="s2d">
-    <div class="section-num">
-      <span class="tag-cyan">02</span>
-      Команда
-    </div>
-    <h2 class="reveal">Что делает<br/><span class="highlight">команду рабочей</span></h2>
-    <p class="section-lead reveal">5 факторов, которые определяют эффективность команды</p>
-
-    <div class="cards cards-3 reveal" style="margin-top:2rem;">
+    <div class="cards reveal" style="grid-template-columns:repeat(5,1fr);margin-top:0;">
       <div class="card">
         <div class="card-icon icon-purple">🛡️</div>
         <h3>Психологическая безопасность</h3>
-        <p>Люди не боятся ошибиться или высказать мнение. Без страха нет честной коммуникации.</p>
+        <p>Люди не боятся ошибиться или высказать мнение.</p>
       </div>
       <div class="card">
         <div class="card-icon icon-cyan">🎯</div>
         <h3>Ясность целей</h3>
-        <p>Каждый понимает, зачем он здесь и какой результат считается успехом.</p>
+        <p>Каждый понимает, зачем он здесь и что считается успехом.</p>
       </div>
       <div class="card">
         <div class="card-icon icon-pink">💬</div>
         <h3>Открытая коммуникация</h3>
-        <p>Проблемы озвучиваются сразу, не копятся. Договорённости фиксируются.</p>
+        <p>Проблемы озвучиваются сразу. Договорённости фиксируются.</p>
       </div>
       <div class="card">
         <div class="card-icon icon-amber">⚖️</div>
         <h3>Доверие и уважение</h3>
-        <p>Каждый доверяет компетентности других и уважает их вклад в общее дело.</p>
+        <p>Каждый ценит вклад других в общее дело.</p>
       </div>
       <div class="card">
         <div class="card-icon icon-green">🔄</div>
         <h3>Культура обратной связи</h3>
-        <p>Ретроспективы, 1:1, честные разговоры — команда учится и растёт вместе.</p>
+        <p>Ретроспективы, 1:1 — команда учится и растёт.</p>
       </div>
     </div>
   </section>
@@ -2329,45 +2332,105 @@
 
   <div class="section-divider"></div>
 
-  <!-- 3. ИНСТРУМЕНТЫ -->
-  <section id="s3">
+  <!-- 3a. ТОЧКИ РАЗРУШЕНИЯ -->
+  <section id="s3" style="min-height:100svh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;">
+    <div style="position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(236,72,153,0.18) 0%,transparent 70%);border-radius:50%;top:-150px;right:-150px;pointer-events:none;"></div>
+    <div style="position:absolute;width:400px;height:400px;background:radial-gradient(circle,rgba(124,58,237,0.15) 0%,transparent 70%);border-radius:50%;bottom:-100px;left:-100px;pointer-events:none;"></div>
+
     <div class="section-num">
       <span class="tag-cyan">03</span>
       Инструменты
     </div>
-    <h2 class="reveal" style="white-space:nowrap;">Управляемый хаос: как не дать проекту развалиться</h2>
 
-    <div class="reveal" style="margin-top:2.5rem;margin-bottom:4rem;">
-      <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#f472b6;margin-bottom:1.25rem;">Точки разрушения проекта</div>
-      <div style="display:flex;flex-wrap:wrap;gap:0.75rem;">
-        <div style="display:flex;align-items:center;gap:0.6rem;padding:0.6rem 1.1rem;border-radius:100px;background:rgba(236,72,153,0.08);border:1px solid rgba(236,72,153,0.25);">
-          <span style="width:7px;height:7px;border-radius:50%;background:#ec4899;flex-shrink:0;"></span>
-          <span style="font-size:0.9rem;color:#f1f5f9;">размытые требования</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:0.6rem;padding:0.6rem 1.1rem;border-radius:100px;background:rgba(236,72,153,0.08);border:1px solid rgba(236,72,153,0.25);">
-          <span style="width:7px;height:7px;border-radius:50%;background:#ec4899;flex-shrink:0;"></span>
-          <span style="font-size:0.9rem;color:#f1f5f9;">бесконечные согласования</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:0.6rem;padding:0.6rem 1.1rem;border-radius:100px;background:rgba(236,72,153,0.08);border:1px solid rgba(236,72,153,0.25);">
-          <span style="width:7px;height:7px;border-radius:50%;background:#ec4899;flex-shrink:0;"></span>
-          <span style="font-size:0.9rem;color:#f1f5f9;">изменения без контроля</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:0.6rem;padding:0.6rem 1.1rem;border-radius:100px;background:rgba(236,72,153,0.08);border:1px solid rgba(236,72,153,0.25);">
-          <span style="width:7px;height:7px;border-radius:50%;background:#ec4899;flex-shrink:0;"></span>
-          <span style="font-size:0.9rem;color:#f1f5f9;">отсутствие прозрачности</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:0.6rem;padding:0.6rem 1.1rem;border-radius:100px;background:rgba(236,72,153,0.08);border:1px solid rgba(236,72,153,0.25);">
-          <span style="width:7px;height:7px;border-radius:50%;background:#ec4899;flex-shrink:0;"></span>
-          <span style="font-size:0.9rem;color:#f1f5f9;">«мы думали, вы это сделаете»</span>
-        </div>
+    <h2 class="reveal">Управляемый хаос: как не дать проекту развалиться</h2>
+
+    <!-- Big centered label -->
+    <div class="reveal" style="text-align:center;margin:3rem 0 3.5rem;">
+      <div style="display:flex;align-items:center;justify-content:center;gap:1.25rem;margin-bottom:0.75rem;">
+        <div style="height:2px;width:80px;background:linear-gradient(90deg,transparent,#ec4899);border-radius:2px;"></div>
+        <span style="font-size:1.8rem;">⚠️</span>
+        <div style="height:2px;width:80px;background:linear-gradient(90deg,#ec4899,transparent);border-radius:2px;"></div>
       </div>
+      <p style="font-size:clamp(2rem,4.5vw,3.5rem);font-weight:900;letter-spacing:0.06em;text-transform:uppercase;background:linear-gradient(135deg,#f472b6 20%,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1;margin:0;">Точки разрушения<br/>проекта</p>
     </div>
 
-    <div class="reveal" style="margin-bottom:1.5rem;">
-      <p style="font-size:1.1rem;font-weight:700;color:#94a3b8;letter-spacing:0.02em;">Основа: прозрачность процессов</p>
-    </div>
+    <!-- Flow diagram -->
+    <div class="reveal" style="display:flex;align-items:stretch;justify-content:center;gap:0;padding:0 clamp(0.5rem,2vw,2rem);">
 
-    <div class="cards cards-2 reveal" style="margin-top:0;">
+      <!-- Card 1 -->
+      <div style="flex:1;min-width:0;background:rgba(236,72,153,0.07);border:1px solid rgba(236,72,153,0.35);border-radius:20px;padding:1.75rem 1.25rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;position:relative;">
+        <div style="width:56px;height:56px;border-radius:50%;background:rgba(236,72,153,0.18);border:2px solid rgba(236,72,153,0.5);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;">📝</div>
+        <span style="font-size:0.6rem;font-weight:800;color:#f472b6;letter-spacing:0.18em;text-transform:uppercase;">01</span>
+        <p style="font-size:clamp(0.85rem,1.3vw,1.05rem);font-weight:700;color:#f1f5f9;line-height:1.35;margin:0;">размытые<br/>требования</p>
+        <p style="font-size:0.75rem;color:#94a3b8;line-height:1.4;margin:0;">ТЗ меняется на ходу, договорённости только устно</p>
+      </div>
+
+      <!-- Arrow -->
+      <div style="display:flex;align-items:center;padding:0 0.6rem;flex-shrink:0;">
+        <svg width="28" height="16" viewBox="0 0 28 16" fill="none"><path d="M0 8h22" stroke="#ec4899" stroke-width="2" stroke-linecap="round"/><path d="M16 2l8 6-8 6" stroke="#ec4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+
+      <!-- Card 2 -->
+      <div style="flex:1;min-width:0;background:rgba(236,72,153,0.07);border:1px solid rgba(236,72,153,0.35);border-radius:20px;padding:1.75rem 1.25rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;">
+        <div style="width:56px;height:56px;border-radius:50%;background:rgba(236,72,153,0.18);border:2px solid rgba(236,72,153,0.5);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;">🔄</div>
+        <span style="font-size:0.6rem;font-weight:800;color:#f472b6;letter-spacing:0.18em;text-transform:uppercase;">02</span>
+        <p style="font-size:clamp(0.85rem,1.3vw,1.05rem);font-weight:700;color:#f1f5f9;line-height:1.35;margin:0;">бесконечные<br/>согласования</p>
+        <p style="font-size:0.75rem;color:#94a3b8;line-height:1.4;margin:0;">цепочки писем, решения зависают неделями</p>
+      </div>
+
+      <!-- Arrow -->
+      <div style="display:flex;align-items:center;padding:0 0.6rem;flex-shrink:0;">
+        <svg width="28" height="16" viewBox="0 0 28 16" fill="none"><path d="M0 8h22" stroke="#ec4899" stroke-width="2" stroke-linecap="round"/><path d="M16 2l8 6-8 6" stroke="#ec4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+
+      <!-- Card 3 -->
+      <div style="flex:1;min-width:0;background:rgba(236,72,153,0.07);border:1px solid rgba(236,72,153,0.35);border-radius:20px;padding:1.75rem 1.25rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;">
+        <div style="width:56px;height:56px;border-radius:50%;background:rgba(236,72,153,0.18);border:2px solid rgba(236,72,153,0.5);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;">⚡</div>
+        <span style="font-size:0.6rem;font-weight:800;color:#f472b6;letter-spacing:0.18em;text-transform:uppercase;">03</span>
+        <p style="font-size:clamp(0.85rem,1.3vw,1.05rem);font-weight:700;color:#f1f5f9;line-height:1.35;margin:0;">изменения<br/>без контроля</p>
+        <p style="font-size:0.75rem;color:#94a3b8;line-height:1.4;margin:0;">«быстрые правочки» двигают сроки без оценки</p>
+      </div>
+
+      <!-- Arrow -->
+      <div style="display:flex;align-items:center;padding:0 0.6rem;flex-shrink:0;">
+        <svg width="28" height="16" viewBox="0 0 28 16" fill="none"><path d="M0 8h22" stroke="#ec4899" stroke-width="2" stroke-linecap="round"/><path d="M16 2l8 6-8 6" stroke="#ec4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+
+      <!-- Card 4 -->
+      <div style="flex:1;min-width:0;background:rgba(236,72,153,0.07);border:1px solid rgba(236,72,153,0.35);border-radius:20px;padding:1.75rem 1.25rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;">
+        <div style="width:56px;height:56px;border-radius:50%;background:rgba(236,72,153,0.18);border:2px solid rgba(236,72,153,0.5);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;">🌫️</div>
+        <span style="font-size:0.6rem;font-weight:800;color:#f472b6;letter-spacing:0.18em;text-transform:uppercase;">04</span>
+        <p style="font-size:clamp(0.85rem,1.3vw,1.05rem);font-weight:700;color:#f1f5f9;line-height:1.35;margin:0;">отсутствие<br/>прозрачности</p>
+        <p style="font-size:0.75rem;color:#94a3b8;line-height:1.4;margin:0;">никто не знает реального статуса проекта</p>
+      </div>
+
+      <!-- Arrow -->
+      <div style="display:flex;align-items:center;padding:0 0.6rem;flex-shrink:0;">
+        <svg width="28" height="16" viewBox="0 0 28 16" fill="none"><path d="M0 8h22" stroke="#ec4899" stroke-width="2" stroke-linecap="round"/><path d="M16 2l8 6-8 6" stroke="#ec4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+
+      <!-- Card 5 -->
+      <div style="flex:1;min-width:0;background:rgba(236,72,153,0.12);border:1px solid rgba(236,72,153,0.5);border-radius:20px;padding:1.75rem 1.25rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;box-shadow:0 0 32px rgba(236,72,153,0.2);">
+        <div style="width:56px;height:56px;border-radius:50%;background:rgba(236,72,153,0.3);border:2px solid #ec4899;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;">💥</div>
+        <span style="font-size:0.6rem;font-weight:800;color:#f472b6;letter-spacing:0.18em;text-transform:uppercase;">05</span>
+        <p style="font-size:clamp(0.85rem,1.3vw,1.05rem);font-weight:700;color:#f1f5f9;line-height:1.35;margin:0;">«мы думали,<br/>вы это сделаете»</p>
+        <p style="font-size:0.75rem;color:#94a3b8;line-height:1.4;margin:0;">ожидания не зафиксированы — конфликт неизбежен</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- 3b. ПРОЗРАЧНОСТЬ ПРОЦЕССОВ -->
+  <section id="s3b" style="min-height:100svh;display:flex;flex-direction:column;justify-content:center;">
+    <div class="section-num">
+      <span class="tag-cyan">03</span>
+      Инструменты
+    </div>
+    <h2 class="reveal">Основа: <span class="highlight">прозрачность процессов</span></h2>
+
+    <div class="cards cards-2 reveal" style="margin-top:2rem;">
       <div class="card">
         <div class="card-icon icon-cyan">📋</div>
         <h3>Единый источник правды</h3>
@@ -2389,7 +2452,6 @@
         <p>Реестр рисков ведётся с первого дня. Каждый риск: вероятность × влияние × план митигации. Пересматривается каждые две недели.</p>
       </div>
     </div>
-
   </section>
 
   <div class="section-divider"></div>
@@ -2491,7 +2553,7 @@
         <div>
           <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#94a3b8;margin-bottom:0.3rem;">Спикер</div>
           <div style="font-size:1.1rem;font-weight:800;color:#1e2d3d;">Екатерина Эльдарова</div>
-          <div style="font-size:0.85rem;color:#4a6080;margin-top:0.2rem;">Development Director · Notamedia</div>
+          <div style="font-size:0.85rem;color:#4a6080;margin-top:0.2rem;">Руководитель подразделения веб-разработки · Notamedia</div>
         </div>
         <div style="height:1px;background:rgba(30,45,61,0.1);"></div>
         <div style="display:flex;flex-direction:column;gap:0.6rem;">
