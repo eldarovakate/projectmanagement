@@ -1550,7 +1550,7 @@
 
       <!-- bio -->
       <div style="padding-top:0.25rem;">
-        <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:#0f172a;line-height:1.15;margin-bottom:0.35rem;">Эльдарова Екатерина</h2>
+        <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:#0f172a;line-height:1.15;margin-bottom:0.35rem;">Екатерина Эльдарова</h2>
         <p style="font-size:clamp(0.9rem,1.4vw,1.05rem);font-weight:600;background:linear-gradient(135deg,#1a6fc4,#1a9e72);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:1rem;line-height:1.4;">Руководитель web-разработки в Notamedia.Agency</p>
 
         <div style="display:flex;flex-direction:column;gap:0.5rem;">
@@ -2773,11 +2773,20 @@
     }
 
     document.addEventListener('click', (e) => {
-      if (e.target.closest('a, button, input, select, textarea, [role="button"]')) return;
+      if (e.target.closest('a, button, input, select, textarea, video, [role="button"]')) return;
       const current = getCurrentSection();
       const idx = sections.indexOf(current);
       const next = sections[idx + 1];
       if (next) next.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    // Правая кнопка мыши → предыдущий слайд
+    document.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+      const current = getCurrentSection();
+      const idx = sections.indexOf(current);
+      const prev = sections[idx - 1];
+      if (prev) prev.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   </script>
 </body>
